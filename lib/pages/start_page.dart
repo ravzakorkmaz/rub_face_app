@@ -7,7 +7,8 @@ class StartPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 215, 165, 187),
+      //backgroundColor: Color.fromARGB(255, 215, 165, 187),
+      backgroundColor: Color.fromARGB(255, 23, 54, 92),
       body: SafeArea(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -17,7 +18,7 @@ class StartPage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  "JAPAN JOURNEY",
+                  "MAKERSPACE",
                   style: TextStyle(
                     fontSize: 38,
                     fontWeight: FontWeight.bold,
@@ -34,15 +35,16 @@ class StartPage extends StatelessWidget {
             SizedBox(height: 50),
             Center(
               child: Image.asset(
-                "lib/images/japan5.png",
-                height: 350,
+                "lib/images/owerk.png",
+                height: 400,
+                width: 400,
               ),
             ),
             SizedBox(height: 25),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 15.0),
               child: Text(
-                "Erleben Sie Japan ein!",
+                "Erleben Sie kreative Produkte!",
                 style: TextStyle(
                     fontSize: 30,
                     fontWeight: FontWeight.bold,
@@ -75,7 +77,7 @@ class StartPage extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 15.0),
               child: MyButton(
-                myText: "Reise Starten",
+                myText: "Shoppe los",
                 event: () => Navigator.pushNamed(context, "/menupage"),
               ),
             ),

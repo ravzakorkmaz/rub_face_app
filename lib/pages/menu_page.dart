@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:rub_face_app/components/app_bar.dart';
 import 'package:rub_face_app/components/button.dart';
 import 'package:rub_face_app/components/event_tile.dart';
 
@@ -41,32 +42,7 @@ class _MenuPageState extends State<MenuPage> {
     return Scaffold(
       //backgroundColor: _isDarkMode ? Colors.black : Color.fromARGB(255, 215, 165, 187),
       backgroundColor: _isDarkMode ? Colors.black : Colors.white,
-      appBar: AppBar(
-        title: Text("M A K E R S P A C E"),
-        centerTitle: true,
-        //backgroundColor: Colors.transparent,
-        //backgroundColor: Color.fromARGB(255, 146, 192, 29),
-        backgroundColor: Color.fromARGB(255, 23, 54, 92),
-        elevation: 0,
-        leading: Icon(Icons.menu),
-        actions: [
-          IconButton(
-            onPressed: () {
-              setState(() {
-                _isDarkMode = !_isDarkMode;
-              });
-            },
-            icon: _isDarkMode ? Icon(Icons.light_mode) : Icon(Icons.dark_mode),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(right: 15.0),
-            child: IconButton(
-              icon: Icon(Icons.shopping_cart),
-              onPressed: () => Navigator.pushNamed(context, '/cartpage'),
-            ),
-          )
-        ],
-      ),
+      appBar: MyAppBar(myTitle: 'M A K E R S P A C E'),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -74,7 +50,8 @@ class _MenuPageState extends State<MenuPage> {
             padding: EdgeInsets.all(25),
             margin: EdgeInsets.all(25),
             decoration: BoxDecoration(
-              color: Color(0xffffb46c),
+              //color: Color(0xffffb46c),
+              color: Color.fromARGB(255, 23, 54, 92),
               borderRadius: BorderRadius.circular(20),
             ),
             child: Row(
@@ -83,14 +60,15 @@ class _MenuPageState extends State<MenuPage> {
                 Column(
                   children: [
                     Text(
-                      "32 % Nachlass",
+                      "10 % Nachlass",
                       style: TextStyle(
-                        fontSize: 22,
-                      ),
+                          fontSize: 22,
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold),
                     ),
                     SizedBox(height: 15),
                     MyButton(
-                      myText: "Buchen",
+                      myText: "Kaufen",
                       event: () {},
                     )
                   ],
@@ -160,7 +138,8 @@ class _MenuPageState extends State<MenuPage> {
             margin: EdgeInsets.symmetric(horizontal: 25.0),
             padding: EdgeInsets.all(8),
             decoration: BoxDecoration(
-              color: Color.fromARGB(255, 94, 185, 160),
+              //color: Color.fromARGB(255, 94, 185, 160),
+              color: Color.fromARGB(255, 23, 54, 92),
               borderRadius: BorderRadius.circular(20),
             ),
             child: Row(
