@@ -13,6 +13,7 @@ class FestivalPage extends StatelessWidget {
     return Consumer<CartModel>(
       builder: (context, cartModel, child) => Scaffold(
         //backgroundColor: Color.fromARGB(255, 215, 165, 187),
+        appBar: MyAppBar(myTitle: 'Title'),
         backgroundColor: Colors.white,
         /*appBar: AppBar(
           title: Text("J A P A N"),
