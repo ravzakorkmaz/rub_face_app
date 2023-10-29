@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:rub_face_app/components/app_bar.dart';
 import 'package:rub_face_app/models/cart_model.dart';
 import 'package:provider/provider.dart';
 
@@ -9,15 +10,18 @@ class CartPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Consumer<CartModel>(
       builder: (context, cartModel, child) => Scaffold(
-        backgroundColor: Color.fromARGB(255, 215, 165, 187),
-        appBar: AppBar(
+        //backgroundColor: Color.fromARGB(255, 215, 165, 187),
+        backgroundColor: Colors.white,
+        /*appBar: AppBar(
           backgroundColor: Colors.transparent,
           elevation: 0,
           title: Text("Warenkorb"),
           centerTitle: true,
-        ),
+        ),*/
+        appBar: MyAppBar(myTitle: 'W A R E N K O R B'),
         body: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 25.0),
+          //padding: const EdgeInsets.symmetric(horizontal: 25.0),
+          padding: const EdgeInsets.all(25.0),
           child: Column(
             children: [
               Expanded(
@@ -26,7 +30,8 @@ class CartPage extends StatelessWidget {
                   if (cartModel.nudelsuppe > 0)
                     Container(
                       decoration: BoxDecoration(
-                        color: Color.fromARGB(255, 61, 91, 212),
+                        //color: Color.fromARGB(255, 61, 91, 212),
+                        color: Color.fromARGB(255, 146, 192, 29),
                         borderRadius: BorderRadius.circular(12),
                       ),
                       child: ListTile(
@@ -58,7 +63,8 @@ class CartPage extends StatelessWidget {
                   if (cartModel.festival > 0)
                     Container(
                       decoration: BoxDecoration(
-                        color: Color.fromARGB(255, 61, 91, 212),
+                        //color: Color.fromARGB(255, 61, 91, 212),
+                        color: Color.fromARGB(255, 146, 192, 29),
                         borderRadius: BorderRadius.circular(12),
                       ),
                       child: ListTile(
@@ -89,12 +95,12 @@ class CartPage extends StatelessWidget {
                   SizedBox(height: 50),
                   Container(
                     decoration: BoxDecoration(
-                      color: Color.fromARGB(255, 61, 91, 212),
+                      color: Color.fromARGB(255, 23, 54, 92),
                       borderRadius: BorderRadius.circular(12),
                     ),
                     child: ListTile(
                       title: Text(
-                        "Menge der Events",
+                        "TOTAL",
                         style: TextStyle(color: Colors.white),
                       ),
                       subtitle: Text(

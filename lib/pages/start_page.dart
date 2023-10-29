@@ -42,7 +42,7 @@ class StartPage extends StatelessWidget {
             ),
             SizedBox(height: 25),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 15.0),
+              padding: const EdgeInsets.symmetric(horizontal: 20.0),
               child: Text(
                 "Erleben Sie kreative Produkte!",
                 style: TextStyle(
@@ -53,22 +53,22 @@ class StartPage extends StatelessWidget {
             ),
             SizedBox(height: 15),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 15.0),
+              padding: const EdgeInsets.symmetric(horizontal: 20.0),
               child: Text(
-                "日本を体験してみよう",
+                "クリエイティブな製品を体験してください",
                 style: TextStyle(
-                    fontSize: 28,
+                    fontSize: 18,
                     fontWeight: FontWeight.bold,
                     color: Colors.white),
               ),
             ),
             SizedBox(height: 35),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 15.0),
+              padding: const EdgeInsets.symmetric(horizontal: 20.0),
               child: Text(
-                "Entdecke das Land der aufgehenden Sonne un tauche ein in eine Welt voller Tradition, Kultur und atemberaubender Natur.",
+                "Entdecke die Welt der Entfaltung und tauche ein in das Meer voller Ideen.",
                 style: TextStyle(
-                    fontSize: 12,
+                    fontSize: 10,
                     fontWeight: FontWeight.bold,
                     color: Colors.white),
               ),

@@ -14,31 +14,13 @@ class FestivalPage extends StatelessWidget {
         //backgroundColor: Color.fromARGB(255, 215, 165, 187),
         appBar: MyAppBar(myTitle: 'M A K E R S P A C E'),
         backgroundColor: Colors.white,
-        /*appBar: AppBar(
-          title: Text("J A P A N"),
-          centerTitle: true,
-          //backgroundColor: Colors.transparent,
-          //backgroundColor: Color.fromARGB(255, 146, 192, 29),
-          backgroundColor: Color.fromARGB(255, 23, 54, 92),
-          elevation: 0,
-          actions: [
-            IconButton(
-              onPressed: () {},
-              icon: Icon(Icons.dark_mode),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(right: 15.0),
-              child: Icon(Icons.shopping_cart),
-            )
-          ],
-        ),*/
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Center(
               child: Image.asset(
-                "lib/images/japan7.png",
-                height: 200,
+                "lib/images/cat_front.png",
+                height: 250,
               ),
             ),
             SizedBox(height: 20),
@@ -66,7 +48,7 @@ class FestivalPage extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 25.0),
               child: const Text(
-                "Mitama Matsuri Festival",
+                "Cat",
                 style: TextStyle(
                   fontSize: 28,
                   //color: Colors.white,
@@ -78,7 +60,7 @@ class FestivalPage extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 25.0),
               child: const Text(
-                "Das erwartet Sie",
+                "Druck dir deine eigene Spielfigur und beeindrucke dein Umfeld.",
                 style: TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
@@ -91,7 +73,7 @@ class FestivalPage extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 25.0),
               child: const Text(
-                "Das Mitama Matsuri Festival in Tokyo beeindruckt mit Tausenden von leuchtenden Laternen, die den Yasukuni-Schrein rehellen und den Geistern der Kriegsopfer gewidmet sind. Besucher können traditionelle Darbietungen genießen, köstliches japanisches Streetfood probieren und an spirituellen Zeremonien teilnehmen.",
+                "Der 3D-Drucker im Makerspace ermöglicht es Dir dich kreativ auszutoben und jegliche Art deiner Traumprodukte in Realität umzusetzen!",
                 style: TextStyle(
                   fontSize: 16,
                   color: Color.fromARGB(255, 23, 54, 92),
@@ -111,7 +93,7 @@ class FestivalPage extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         const Text(
-                          "€ 49,00",
+                          "€ 12,00",
                           style: TextStyle(
                               fontSize: 20,
                               color: Colors.white,

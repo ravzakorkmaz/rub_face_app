@@ -17,10 +17,10 @@ class _MenuPageState extends State<MenuPage> {
   Widget build(BuildContext context) {
     List EventList = [
       EventTile(
-        name: "Mitama Matsuri Festival",
-        price: "€ 49",
-        imagePath: "lib/images/japan7.png",
-        rating: "5",
+        name: "Cat",
+        price: "€ 12,00",
+        imagePath: "lib/images/cat_front.png",
+        rating: "5,0",
         details: () => Navigator.pushNamed(context, '/festivalpage'),
       ),
       EventTile(
