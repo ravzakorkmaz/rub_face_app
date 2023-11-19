@@ -52,7 +52,7 @@ class FestivalPage extends StatelessWidget {
                 style: TextStyle(
                   fontSize: 28,
                   //color: Colors.white,
-                  color: Color.fromARGB(255, 23, 54, 92),
+                  color: Color.fromARGB(255, 42, 53, 66),
                 ),
               ),
             ),

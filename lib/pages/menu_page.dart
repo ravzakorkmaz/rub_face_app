@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:rub_face_app/components/app_bar.dart';
 import 'package:rub_face_app/components/button.dart';
 import 'package:rub_face_app/components/event_tile.dart';
+import 'package:rub_face_app/pages/event_pages/product.dart';
 
 class MenuPage extends StatefulWidget {
   const MenuPage({super.key});
@@ -15,18 +16,44 @@ class _MenuPageState extends State<MenuPage> {
 
   @override
   Widget build(BuildContext context) {
+    //Product list
+    List<Map<String, dynamic>> products = [
+      {
+        'productName': 'Cat',
+        'rating': '5.0',
+        'imagePath': 'lib/images/cat_front.png',
+        'description':
+            'Druck dir deine eigene Spielfigur und beeindrucke dein Umfeld.',
+        'price': '€ 12,00',
+      },
+      {
+        'productName': 'Head',
+        'rating': '4.0',
+        'imagePath': 'lib/images/head_front.png',
+        'description': 'Kafa leyla',
+        'price': '€ 15,00',
+      }
+    ];
+
     List EventList = [
       EventTile(
-        name: "Cat",
+          /*name: "Cat",
         price: "€ 12,00",
         imagePath: "lib/images/cat_front.png",
         rating: "5,0",
-        details: () => Navigator.pushNamed(context, '/festivalpage'),
-      ),
+        details: () => Navigator.pushNamed(context, '/festivalpage'),*/
+          name: products[0]['productName'],
+          price: products[0]['price'],
+          imagePath: products[0]['imagePath'],
+          rating: products[0]['rating'],
+          details: () => Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => ProductPage(product: products[0])))),
       EventTile(
-        name: "Noodle Harmony Japan",
+        name: "Head",
         price: "€ 18",
-        imagePath: "lib/images/japan3.png",
+        imagePath: "lib/images/head_front.png",
         rating: "4",
         details: () => Navigator.pushNamed(context, '/noodleharmonypage'),
       ),

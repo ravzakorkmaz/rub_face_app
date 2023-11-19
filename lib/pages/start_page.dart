@@ -35,9 +35,9 @@ class StartPage extends StatelessWidget {
             SizedBox(height: 50),
             Center(
               child: Image.asset(
-                "lib/images/owerk.png",
-                height: 400,
-                width: 400,
+                "lib/images/makerspace_3d.png",
+                height: 100,
+                width: 100,
               ),
             ),
             SizedBox(height: 25),

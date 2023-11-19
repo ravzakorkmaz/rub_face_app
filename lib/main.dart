@@ -23,7 +23,6 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -34,7 +33,7 @@ class MyApp extends StatelessWidget {
         '/menupage': (context) => MenuPage(),
         '/festivalpage': (context) => FestivalPage(),
         '/noodleharmonypage': (context) => NoodleHarmonyPage(),
-        '/productpage': (context) => ProductPage(),
+        //'/productpage': (context) => ProductPage(),
         '/cartpage': (context) => CartPage(),
       },
     );

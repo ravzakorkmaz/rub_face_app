@@ -1,38 +1,32 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:rub_face_app/components/app_bar.dart';
 import 'package:rub_face_app/components/button.dart';
 import 'package:rub_face_app/models/cart_model.dart';
-import 'package:provider/provider.dart';
 
-class NoodleHarmonyPage extends StatelessWidget {
-  const NoodleHarmonyPage({super.key});
+class ProductList extends StatelessWidget {
+  List<Map<String, dynamic>> products = [
+    {
+      'productName': 'Cat',
+      'rating': '5.0',
+      'imagePath': 'lib/images/cat_front.png',
+      'description':
+          'Druck dir deine eigene Spielfigur und beeindrucke dein Umfeld.',
+      'price': '€ 12,00',
+    }
+  ];
 
   @override
   Widget build(BuildContext context) {
     return Consumer<CartModel>(
       builder: (context, cartModel, child) => Scaffold(
-        backgroundColor: Color.fromARGB(255, 215, 165, 187),
-        appBar: AppBar(
-          title: Text("J A P A N"),
-          centerTitle: true,
-          backgroundColor: Colors.transparent,
-          elevation: 0,
-          actions: [
-            IconButton(
-              onPressed: () {},
-              icon: Icon(Icons.dark_mode),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(right: 15.0),
-              child: Icon(Icons.shopping_cart),
-            )
-          ],
-        ),
+        appBar: MyAppBar(myTitle: 'M A K E R S P A C E'),
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Center(
               child: Image.asset(
-                "lib/images/head_front.png",
+                "lib/images/cat_front.png",
                 height: 250,
               ),
             ),
@@ -47,10 +41,11 @@ class NoodleHarmonyPage extends StatelessWidget {
                     size: 30,
                   ),
                   Text(
-                    "4,0",
+                    "5,0",
                     style: TextStyle(
                       fontSize: 20,
-                      color: Colors.white,
+                      //color: Colors.white,
+                      color: Color.fromARGB(255, 23, 54, 92),
                     ),
                   ),
                 ],
@@ -60,10 +55,11 @@ class NoodleHarmonyPage extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 25.0),
               child: const Text(
-                "Noodle Harmony Japan",
+                "Cat",
                 style: TextStyle(
                   fontSize: 28,
-                  color: Colors.white,
+                  //color: Colors.white,
+                  color: Color.fromARGB(255, 42, 53, 66),
                 ),
               ),
             ),
@@ -71,11 +67,12 @@ class NoodleHarmonyPage extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 25.0),
               child: const Text(
-                "Das erwartet Sie",
+                "Druck dir deine eigene Spielfigur und beeindrucke dein Umfeld.",
                 style: TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
-                  color: Colors.white,
+                  //color: Colors.white,
+                  color: Color.fromARGB(255, 23, 54, 92),
                 ),
               ),
             ),
@@ -83,10 +80,10 @@ class NoodleHarmonyPage extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 25.0),
               child: const Text(
-                "Das Noodle Harmony in Tokio ist mehr als nur ein Restaurant, es ist eine Oase für alle Liebhaber authentischer japanischer Nudelsuppen. Hier verschmelzen traditionelle Rezepte und moderne Kochtechniken, um ein einzigartiges Geschmackserlebnis zu kreiren, das jeden Gaumen entzückt.",
+                "Der 3D-Drucker im Makerspace ermöglicht es Dir dich kreativ auszutoben und jegliche Art deiner Traumprodukte in Realität umzusetzen!",
                 style: TextStyle(
                   fontSize: 16,
-                  color: Colors.white,
+                  color: Color.fromARGB(255, 23, 54, 92),
                   height: 1,
                 ),
               ),
@@ -95,14 +92,15 @@ class NoodleHarmonyPage extends StatelessWidget {
             Expanded(
               child: Container(
                 padding: EdgeInsets.all(25),
-                color: Color.fromARGB(255, 61, 91, 212),
+                //color: Color.fromARGB(255, 61, 91, 212),
+                color: Color.fromARGB(255, 23, 54, 92),
                 child: Column(
                   children: [
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         const Text(
-                          "€ 18,00",
+                          "€ 12,00",
                           style: TextStyle(
                               fontSize: 20,
                               color: Colors.white,
@@ -116,12 +114,12 @@ class NoodleHarmonyPage extends StatelessWidget {
                                 color: Colors.white,
                               ),
                               child: IconButton(
-                                  onPressed: cartModel.removeNudelsuppe,
+                                  onPressed: cartModel.removeFestival,
                                   icon: Icon(Icons.remove)),
                             ),
                             const SizedBox(width: 8),
                             Text(
-                              cartModel.nudelsuppe.toString(),
+                              cartModel.festival.toString(),
                               style: const TextStyle(
                                   color: Colors.white,
                                   fontSize: 20,
@@ -134,7 +132,7 @@ class NoodleHarmonyPage extends StatelessWidget {
                                 color: Colors.white,
                               ),
                               child: IconButton(
-                                  onPressed: cartModel.addNudelsuppe,
+                                  onPressed: cartModel.addFestival,
                                   icon: Icon(Icons.add)),
                             ),
                           ],
