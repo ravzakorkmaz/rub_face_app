@@ -7,6 +7,7 @@ import 'package:rub_face_app/models/cart_model.dart';
 
 class ProductPage extends StatelessWidget {
   final Map<String, dynamic> product;
+  final CartModel cart = CartModel();
 
   ProductPage({required this.product});
 
@@ -63,7 +64,7 @@ class ProductPage extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 25.0),
               child: Text(
-                "Druck dir deine eigene Spielfigur und beeindrucke dein Umfeld.",
+                "Test Text wo taucht das auf?",
                 style: TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
@@ -110,12 +111,14 @@ class ProductPage extends StatelessWidget {
                                 color: Colors.white,
                               ),
                               child: IconButton(
-                                  onPressed: cartModel.removeFestival,
+                                  //onPressed: cartModel.removeFestival,
+                                  onPressed: () =>
+                                      cartModel.removeFromCart(product),
                                   icon: Icon(Icons.remove)),
                             ),
                             const SizedBox(width: 8),
                             Text(
-                              cartModel.festival.toString(),
+                              cartModel.getProductQuantity(product).toString(),
                               style: const TextStyle(
                                   color: Colors.white,
                                   fontSize: 20,
@@ -128,7 +131,7 @@ class ProductPage extends StatelessWidget {
                                 color: Colors.white,
                               ),
                               child: IconButton(
-                                  onPressed: cartModel.addFestival,
+                                  onPressed: () => cartModel.addToCart(product),
                                   icon: Icon(Icons.add)),
                             ),
                           ],
@@ -137,7 +140,8 @@ class ProductPage extends StatelessWidget {
                     ),
                     const SizedBox(height: 20),
                     MyButton(
-                      myText: "Zum Einkaufswagen",
+                      myText:
+                          "Zum Einkaufswagen (${cartModel.getTotalItems()})",
                       event: () => Navigator.pushNamed(context, '/cartpage'),
                     )
                   ],

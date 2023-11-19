@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+/*import 'package:flutter/material.dart';
 import 'package:rub_face_app/components/app_bar.dart';
 import 'package:rub_face_app/models/cart_model.dart';
 import 'package:provider/provider.dart';
@@ -27,7 +27,7 @@ class CartPage extends StatelessWidget {
               Expanded(
                   child: ListView(
                 children: [
-                  if (cartModel.nudelsuppe > 0)
+                  if (cartModel.getProductQuantity(product) > 0)
                     Container(
                       decoration: BoxDecoration(
                         //color: Color.fromARGB(255, 61, 91, 212),
@@ -60,69 +60,6 @@ class CartPage extends StatelessWidget {
                       ),
                     ),
                   SizedBox(height: 15),
-                  if (cartModel.festival > 0)
-                    Container(
-                      decoration: BoxDecoration(
-                        //color: Color.fromARGB(255, 61, 91, 212),
-                        color: Color.fromARGB(255, 146, 192, 29),
-                        borderRadius: BorderRadius.circular(12),
-                      ),
-                      child: ListTile(
-                        title: Text(
-                          "Mitama Matsuri Festival",
-                          style: TextStyle(color: Colors.white),
-                        ),
-                        subtitle: Text(
-                          "€ 49,00",
-                          style: TextStyle(color: Colors.white),
-                        ),
-                        trailing: Row(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            Text(
-                              cartModel.festival.toString(),
-                              style: TextStyle(color: Colors.white),
-                            ),
-                            SizedBox(width: 10),
-                            IconButton(
-                              onPressed: cartModel.clearFestival,
-                              icon: Icon(Icons.delete, color: Colors.white),
-                            )
-                          ],
-                        ),
-                      ),
-                    ),
-                  SizedBox(height: 50),
-                  Container(
-                    decoration: BoxDecoration(
-                      color: Color.fromARGB(255, 23, 54, 92),
-                      borderRadius: BorderRadius.circular(12),
-                    ),
-                    child: ListTile(
-                      title: Text(
-                        "TOTAL",
-                        style: TextStyle(color: Colors.white),
-                      ),
-                      subtitle: Text(
-                        cartModel.totalItems.toString(),
-                        style: TextStyle(color: Colors.white),
-                      ),
-                      trailing: Row(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Text(
-                            cartModel.festival.toString(),
-                            style: TextStyle(color: Colors.white),
-                          ),
-                          SizedBox(width: 10),
-                          IconButton(
-                            onPressed: cartModel.clearFestival,
-                            icon: Icon(Icons.delete, color: Colors.white),
-                          )
-                        ],
-                      ),
-                    ),
-                  ),
                 ],
               ))
             ],
@@ -130,5 +67,101 @@ class CartPage extends StatelessWidget {
         ),
       ),
     );
+  }
+}
+*/
+
+import 'package:flutter/material.dart';
+import 'package:rub_face_app/components/app_bar.dart';
+import 'package:rub_face_app/models/cart_model.dart';
+import 'package:provider/provider.dart';
+
+class CartPage extends StatelessWidget {
+  const CartPage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Consumer<CartModel>(
+      builder: (context, cartModel, child) => Scaffold(
+        appBar: MyAppBar(myTitle: 'W A R E N K O R B'),
+        backgroundColor: Colors.white,
+        body: Padding(
+          padding: const EdgeInsets.all(25.0),
+          child: Column(
+            children: [
+              Expanded(
+                child: ListView(
+                  children: [
+                    for (var product in cartModel.cartItems.keys)
+                      _buildCartItem(product, cartModel),
+                    SizedBox(height: 15),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildCartItem(String productId, CartModel cartModel) {
+    final product = getProductDetails(productId); // Implement this function
+    //final product = cartModel.get
+    final quantity = cartModel.cartItems[productId] ?? 0;
+
+    if (quantity > 0) {
+      return Container(
+        decoration: BoxDecoration(
+          color: Color.fromARGB(255, 146, 192, 29),
+          borderRadius: BorderRadius.circular(12),
+        ),
+        child: ListTile(
+          title: Text(
+            product['productName'],
+            style: TextStyle(color: Colors.white),
+          ),
+          subtitle: Text(
+            "€ ${product['price']}",
+            style: TextStyle(color: Colors.white),
+          ),
+          trailing: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Text(
+                quantity.toString(),
+                style: TextStyle(color: Colors.white),
+              ),
+              SizedBox(width: 10),
+              IconButton(
+                onPressed: () => cartModel.removeFromCart(product),
+                icon: Icon(Icons.remove, color: Colors.white),
+              ),
+              IconButton(
+                onPressed: () => cartModel.addToCart(product),
+                icon: Icon(Icons.add, color: Colors.white),
+              ),
+              IconButton(
+                onPressed: () => cartModel.clearProduct(productId),
+                icon: Icon(Icons.delete, color: Colors.white),
+              ),
+            ],
+          ),
+        ),
+      );
+    } else {
+      return SizedBox.shrink(); // Return an empty widget if quantity is 0
+    }
+  }
+
+  Map<String, dynamic> getProductDetails(String productId) {
+    // Implement this function to get product details based on productId
+    // You may need to fetch the product details from your data source or use a predefined map
+    // For now, I'll return a dummy map, replace this with your actual implementation
+
+    return {
+      'productName': 'Dummy Product',
+      'price': '0.00',
+    };
   }
 }

@@ -1,42 +1,56 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/foundation.dart';
 
 class CartModel extends ChangeNotifier {
-  int nudelsuppe = 0;
-  int festival = 0;
+  Map<String, int> _cartItems = {};
 
-  void addNudelsuppe() {
-    nudelsuppe++;
+  Map<String, int> get cartItems => _cartItems;
+
+  int getProductQuantity(Map<String, dynamic> product) {
+    return _cartItems[product['productName']] ?? 0;
+  }
+
+  void addToCart(Map<String, dynamic> product) {
+    final productId = product['productName'];
+    _cartItems.update(productId, (value) => value + 1, ifAbsent: () => 1);
     notifyListeners();
   }
 
-  void removeNudelsuppe() {
-    if (nudelsuppe > 0) {
-      nudelsuppe--;
+  void removeFromCart(Map<String, dynamic> product) {
+    final productId = product['productName'];
+    if (_cartItems.containsKey(productId)) {
+      _cartItems.update(productId, (value) => value - 1);
+      if (_cartItems[productId] == 0) {
+        _cartItems.remove(productId);
+      }
       notifyListeners();
     }
   }
 
-  void clearNudelsuppe() {
-    nudelsuppe = 0;
-    notifyListeners();
+  /*Map<String, dynamic> getProductDetails(String productId) {
+    final product = cartItems.containsKey(
+      (item) => item['productName'] == productId,
+      //orElse: () => null,
+    );
+
+    return product;
+  }*/
+
+  int getTotalItems() {
+    return _cartItems.values.fold(0, (sum, quantity) => sum + quantity);
   }
 
-  void addFestival() {
-    festival++;
-    notifyListeners();
-  }
-
-  void removeFestival() {
-    if (festival > 0) {
-      festival--;
-      notifyListeners();
+  double getTotalPrice(List<Map<String, dynamic>> products) {
+    double total = 0.0;
+    for (var product in products) {
+      final productId = product['productName'];
+      final quantity = _cartItems[productId] ?? 0;
+      total += quantity * double.parse(product['price']);
     }
+    return total;
   }
 
-  void clearFestival() {
-    festival = 0;
+  void clearProduct(String productId) {
+    _cartItems[productId] = 0;
     notifyListeners();
   }
-
-  int get totalItems => nudelsuppe + festival;
 }

@@ -99,7 +99,7 @@ class FestivalPage extends StatelessWidget {
                               color: Colors.white,
                               fontWeight: FontWeight.bold),
                         ),
-                        Row(
+                        /*Row(
                           children: [
                             Container(
                               decoration: BoxDecoration(
@@ -129,7 +129,7 @@ class FestivalPage extends StatelessWidget {
                                   icon: Icon(Icons.add)),
                             ),
                           ],
-                        )
+                        )*/
                       ],
                     ),
                     const SizedBox(height: 20),

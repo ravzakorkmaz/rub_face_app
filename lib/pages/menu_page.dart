@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:rub_face_app/components/app_bar.dart';
 import 'package:rub_face_app/components/button.dart';
 import 'package:rub_face_app/components/event_tile.dart';
+import 'package:rub_face_app/models/cart_model.dart';
 import 'package:rub_face_app/pages/event_pages/product.dart';
 
 class MenuPage extends StatefulWidget {
@@ -32,39 +33,24 @@ class _MenuPageState extends State<MenuPage> {
         'imagePath': 'lib/images/head_front.png',
         'description': 'Kafa leyla',
         'price': '€ 15,00',
-      }
+      },
     ];
 
-    List EventList = [
-      EventTile(
-          /*name: "Cat",
-        price: "€ 12,00",
-        imagePath: "lib/images/cat_front.png",
-        rating: "5,0",
-        details: () => Navigator.pushNamed(context, '/festivalpage'),*/
-          name: products[0]['productName'],
-          price: products[0]['price'],
-          imagePath: products[0]['imagePath'],
-          rating: products[0]['rating'],
-          details: () => Navigator.push(
-              context,
-              MaterialPageRoute(
-                  builder: (context) => ProductPage(product: products[0])))),
-      EventTile(
-        name: "Head",
-        price: "€ 18",
-        imagePath: "lib/images/head_front.png",
-        rating: "4",
-        details: () => Navigator.pushNamed(context, '/noodleharmonypage'),
-      ),
-      EventTile(
-        name: "Mount Fuji Tour",
-        price: "€ 39",
-        imagePath: "lib/images/japan6.png",
-        rating: "4",
-        details: () {},
-      ),
-    ];
+    List EventList = [];
+
+    for (int i = 0; i < products.length; i++) {
+      EventList.add(EventTile(
+        name: products[i]['productName'],
+        price: products[i]['price'],
+        imagePath: products[i]['imagePath'],
+        rating: products[i]['rating'],
+        details: () => Navigator.push(
+          context,
+          MaterialPageRoute(
+              builder: (context) => ProductPage(product: products[i])),
+        ),
+      ));
+    }
 
     return Scaffold(
       //backgroundColor: _isDarkMode ? Colors.black : Color.fromARGB(255, 215, 165, 187),
@@ -87,7 +73,7 @@ class _MenuPageState extends State<MenuPage> {
                 Column(
                   children: [
                     Text(
-                      "10 % Nachlass",
+                      "10 % SALE",
                       style: TextStyle(
                           fontSize: 22,
                           color: Colors.white,
@@ -95,13 +81,13 @@ class _MenuPageState extends State<MenuPage> {
                     ),
                     SizedBox(height: 15),
                     MyButton(
-                      myText: "Kaufen",
+                      myText: "Buy Now",
                       event: () {},
                     )
                   ],
                 ),
                 Image.asset(
-                  "lib/images/japan1.png",
+                  'lib/images/head_right.png',
                   height: 120,
                 )
               ],
@@ -112,7 +98,7 @@ class _MenuPageState extends State<MenuPage> {
             padding: const EdgeInsets.symmetric(horizontal: 25.0),
             child: TextField(
               decoration: InputDecoration(
-                hintText: "Suche Event",
+                hintText: "Search Product",
                 enabledBorder: OutlineInputBorder(
                   borderSide: BorderSide(
                     //color: Colors.white,
@@ -132,7 +118,7 @@ class _MenuPageState extends State<MenuPage> {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 25.0),
             child: Text(
-              "Events",
+              "Products",
               style: TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
@@ -152,7 +138,7 @@ class _MenuPageState extends State<MenuPage> {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 25.0),
             child: Text(
-              "Derzeit beliebt",
+              "Favorite of the month",
               style: TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
@@ -173,7 +159,7 @@ class _MenuPageState extends State<MenuPage> {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 Image.asset(
-                  "lib/images/japan2.png",
+                  products[0]['imagePath'],
                   height: 90,
                 ),
                 SizedBox(width: 10),
@@ -181,7 +167,7 @@ class _MenuPageState extends State<MenuPage> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      "Kimono Kultur",
+                      products[0]['productName'],
                       style: TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.bold,
@@ -190,7 +176,7 @@ class _MenuPageState extends State<MenuPage> {
                     ),
                     SizedBox(height: 10),
                     Text(
-                      "€ 45",
+                      products[0]['price'],
                       style: TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.bold,
