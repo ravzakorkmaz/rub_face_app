@@ -168,7 +168,6 @@ class _MenuPageState extends State<MenuPage> {
             margin: EdgeInsets.symmetric(horizontal: 25.0),
             padding: EdgeInsets.all(8),
             decoration: BoxDecoration(
-              //color: Color.fromARGB(255, 94, 185, 160),
               color: Color.fromARGB(255, 23, 54, 92),
               borderRadius: BorderRadius.circular(20),
             ),
@@ -207,7 +206,8 @@ class _MenuPageState extends State<MenuPage> {
               ],
             ),
           ),
-          SizedBox(height: 10),
+          //SizedBox(height: 10),
+          SizedBox(height: screenWidth * 0.01),
         ],
       ),
     );

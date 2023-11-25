@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:rub_face_app/cart_page.dart';
 import 'package:rub_face_app/components/app_bar.dart';
 import 'package:rub_face_app/components/button.dart';
-import 'package:rub_face_app/components/product_info.dart';
 import 'package:provider/provider.dart';
 import 'package:rub_face_app/models/cart_model.dart';
 
@@ -18,7 +17,6 @@ class ProductPage extends StatelessWidget {
     return FractionallySizedBox(
       child: Consumer<CartModel>(
         builder: (context, cartModel, child) => Scaffold(
-          //backgroundColor: Color.fromARGB(255, 215, 165, 187),
           appBar: MyAppBar(myTitle: 'M A K E R S P A C E'),
           backgroundColor: Colors.white,
           body: Column(
@@ -92,7 +90,6 @@ class ProductPage extends StatelessWidget {
               Expanded(
                 child: Container(
                   padding: EdgeInsets.all(25),
-                  //color: Color.fromARGB(255, 61, 91, 212),
                   color: Color.fromARGB(255, 23, 54, 92),
                   child: Column(
                     children: [
@@ -114,7 +111,6 @@ class ProductPage extends StatelessWidget {
                                   color: Colors.white,
                                 ),
                                 child: IconButton(
-                                    //onPressed: cartModel.removeFestival,
                                     onPressed: () =>
                                         cartModel.removeFromCart(product),
                                     icon: Icon(Icons.remove)),
@@ -148,7 +144,6 @@ class ProductPage extends StatelessWidget {
                       MyButton(
                         myText:
                             "Zum Einkaufswagen (${cartModel.getTotalItems()})",
-                        //event: () => Navigator.pushNamed(context, '/cartpage'),
                         event: () => Navigator.push(
                             context,
                             MaterialPageRoute(

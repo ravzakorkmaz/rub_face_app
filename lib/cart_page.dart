@@ -24,7 +24,6 @@ class CartPage extends StatelessWidget {
                 child: ListView(
                   children: [
                     for (var product in cartModel.cartItems.keys)
-                      //_buildCartItem(product, cartModel),
                       _buildCartItem(product, cartModel),
                     SizedBox(height: 15),
                   ],
@@ -38,8 +37,7 @@ class CartPage extends StatelessWidget {
   }
 
   Widget _buildCartItem(String productId, CartModel cartModel) {
-    final product =
-        getProductDetails(productId, productList); // Implement this function
+    final product = getProductDetails(productId, productList);
     final quantity = cartModel.cartItems[productId] ?? 0;
 
     if (quantity > 0) {

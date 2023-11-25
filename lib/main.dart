@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:rub_face_app/cart_page.dart';
 import 'package:rub_face_app/models/cart_model.dart';
-import 'package:rub_face_app/pages/event_pages/festival.dart';
-import 'package:rub_face_app/pages/event_pages/noodle_harmony.dart';
 import 'package:rub_face_app/pages/event_pages/product.dart';
 import 'package:rub_face_app/pages/menu_page.dart';
 import 'package:rub_face_app/pages/start_page.dart';
@@ -31,9 +29,6 @@ class MyApp extends StatelessWidget {
       routes: {
         '/startpage': (context) => StartPage(),
         '/menupage': (context) => MenuPage(),
-        '/festivalpage': (context) => FestivalPage(),
-        '/noodleharmonypage': (context) => NoodleHarmonyPage(),
-        //'/productpage': (context) => ProductPage(),
         '/cartpage': (context) => CartPage(
               productList: [],
             ),

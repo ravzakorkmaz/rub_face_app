@@ -7,7 +7,6 @@ class StartPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      //backgroundColor: Color.fromARGB(255, 215, 165, 187),
       backgroundColor: Color.fromARGB(255, 23, 54, 92),
       body: SafeArea(
         child: Column(
