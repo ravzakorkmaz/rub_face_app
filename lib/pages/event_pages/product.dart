@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:rub_face_app/cart_page.dart';
 import 'package:rub_face_app/components/app_bar.dart';
 import 'package:rub_face_app/components/button.dart';
 import 'package:rub_face_app/components/product_info.dart';
@@ -7,9 +8,10 @@ import 'package:rub_face_app/models/cart_model.dart';
 
 class ProductPage extends StatelessWidget {
   final Map<String, dynamic> product;
+  final List<Map<String, dynamic>> productList;
   final CartModel cart = CartModel();
 
-  ProductPage({required this.product});
+  ProductPage({required this.product, required this.productList});
 
   @override
   Widget build(BuildContext context) {
@@ -142,7 +144,13 @@ class ProductPage extends StatelessWidget {
                     MyButton(
                       myText:
                           "Zum Einkaufswagen (${cartModel.getTotalItems()})",
-                      event: () => Navigator.pushNamed(context, '/cartpage'),
+                      //event: () => Navigator.pushNamed(context, '/cartpage'),
+                      event: () => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) =>
+                                CartPage(productList: productList),
+                          )),
                     )
                   ],
                 ),

@@ -6,7 +6,7 @@ class CartModel extends ChangeNotifier {
   Map<String, int> get cartItems => _cartItems;
 
   int getProductQuantity(Map<String, dynamic> product) {
-    return _cartItems[product['productName']] ?? 0;
+    return cartItems[product['productName']] ?? 0;
   }
 
   void addToCart(Map<String, dynamic> product) {
@@ -25,15 +25,6 @@ class CartModel extends ChangeNotifier {
       notifyListeners();
     }
   }
-
-  /*Map<String, dynamic> getProductDetails(String productId) {
-    final product = cartItems.containsKey(
-      (item) => item['productName'] == productId,
-      //orElse: () => null,
-    );
-
-    return product;
-  }*/
 
   int getTotalItems() {
     return _cartItems.values.fold(0, (sum, quantity) => sum + quantity);

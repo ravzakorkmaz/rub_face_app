@@ -47,7 +47,10 @@ class _MenuPageState extends State<MenuPage> {
         details: () => Navigator.push(
           context,
           MaterialPageRoute(
-              builder: (context) => ProductPage(product: products[i])),
+              builder: (context) => ProductPage(
+                    product: products[i],
+                    productList: products,
+                  )),
         ),
       ));
     }

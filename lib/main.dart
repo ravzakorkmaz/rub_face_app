@@ -34,7 +34,9 @@ class MyApp extends StatelessWidget {
         '/festivalpage': (context) => FestivalPage(),
         '/noodleharmonypage': (context) => NoodleHarmonyPage(),
         //'/productpage': (context) => ProductPage(),
-        '/cartpage': (context) => CartPage(),
+        '/cartpage': (context) => CartPage(
+              productList: [],
+            ),
       },
     );
   }
