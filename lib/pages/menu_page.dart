@@ -17,6 +17,12 @@ class _MenuPageState extends State<MenuPage> {
 
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+    double screenHeight = MediaQuery.of(context).size.height;
+
+    double horizontalSpacing = screenWidth * 0.05;
+    double verticalSpacing = screenWidth * 0.02;
+
     //Product list
     List<Map<String, dynamic>> products = [
       {
@@ -64,7 +70,9 @@ class _MenuPageState extends State<MenuPage> {
         children: [
           Container(
             padding: EdgeInsets.all(25),
-            margin: EdgeInsets.all(25),
+            //margin: EdgeInsets.all(25),
+            margin: EdgeInsets.symmetric(
+                horizontal: horizontalSpacing, vertical: verticalSpacing),
             decoration: BoxDecoration(
               //color: Color(0xffffb46c),
               color: Color.fromARGB(255, 23, 54, 92),
@@ -82,7 +90,8 @@ class _MenuPageState extends State<MenuPage> {
                           color: Colors.white,
                           fontWeight: FontWeight.bold),
                     ),
-                    SizedBox(height: 15),
+                    //SizedBox(height: 15),
+                    SizedBox(height: verticalSpacing),
                     MyButton(
                       myText: "Buy Now",
                       event: () {},
@@ -96,7 +105,8 @@ class _MenuPageState extends State<MenuPage> {
               ],
             ),
           ),
-          SizedBox(height: 15),
+          //SizedBox(height: 15),
+          SizedBox(height: screenWidth * 0.05),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 25.0),
             child: TextField(
@@ -117,7 +127,8 @@ class _MenuPageState extends State<MenuPage> {
               ),
             ),
           ),
-          SizedBox(height: 13),
+          //SizedBox(height: 13),
+          SizedBox(height: screenWidth * 0.05),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 25.0),
             child: Text(
@@ -129,7 +140,8 @@ class _MenuPageState extends State<MenuPage> {
                   color: Color.fromARGB(255, 23, 54, 92)),
             ),
           ),
-          SizedBox(height: 5),
+          //SizedBox(height: 5),
+          SizedBox(height: screenWidth * 0.02),
           Expanded(
             child: ListView.builder(
               itemBuilder: (context, index) => EventList[index],
@@ -137,7 +149,8 @@ class _MenuPageState extends State<MenuPage> {
               scrollDirection: Axis.horizontal,
             ),
           ),
-          SizedBox(height: 5),
+          //SizedBox(height: 5),
+          SizedBox(height: screenWidth * 0.02),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 25.0),
             child: Text(
@@ -149,7 +162,8 @@ class _MenuPageState extends State<MenuPage> {
                   color: Color.fromARGB(255, 23, 54, 92)),
             ),
           ),
-          SizedBox(height: 10),
+          //SizedBox(height: 10),
+          SizedBox(height: screenWidth * 0.02),
           Container(
             margin: EdgeInsets.symmetric(horizontal: 25.0),
             padding: EdgeInsets.all(8),
@@ -165,7 +179,8 @@ class _MenuPageState extends State<MenuPage> {
                   products[0]['imagePath'],
                   height: 90,
                 ),
-                SizedBox(width: 10),
+                //SizedBox(width: 10),
+                SizedBox(height: screenWidth * 0.1),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -177,7 +192,8 @@ class _MenuPageState extends State<MenuPage> {
                         color: Colors.white,
                       ),
                     ),
-                    SizedBox(height: 10),
+                    //SizedBox(height: 10),
+                    SizedBox(height: screenWidth * 0.05),
                     Text(
                       products[0]['price'],
                       style: TextStyle(
