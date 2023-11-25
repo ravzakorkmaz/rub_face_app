@@ -8,8 +8,6 @@ class CartPage extends StatelessWidget {
 
   const CartPage({Key? key, required this.productList}) : super(key: key);
 
-  //const CartPage({super.key});
-
   @override
   Widget build(BuildContext context) {
     return Consumer<CartModel>(
@@ -25,7 +23,6 @@ class CartPage extends StatelessWidget {
                   children: [
                     for (var product in cartModel.cartItems.keys)
                       _buildCartItem(product, cartModel),
-                    SizedBox(height: 15),
                   ],
                 ),
               ),
@@ -41,43 +38,48 @@ class CartPage extends StatelessWidget {
     final quantity = cartModel.cartItems[productId] ?? 0;
 
     if (quantity > 0) {
-      return Container(
-        decoration: BoxDecoration(
-          color: Color.fromARGB(255, 146, 192, 29),
-          borderRadius: BorderRadius.circular(12),
-        ),
-        child: ListTile(
-          title: Text(
-            product['productName'],
-            style: TextStyle(color: Colors.white),
-          ),
-          subtitle: Text(
-            "${product['price']}",
-            style: TextStyle(color: const Color.fromARGB(255, 14, 13, 13)),
-          ),
-          trailing: Row(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Text(
-                quantity.toString(),
+      return Column(
+        children: [
+          Container(
+            decoration: BoxDecoration(
+              color: Color.fromARGB(255, 146, 192, 29),
+              borderRadius: BorderRadius.circular(12),
+            ),
+            child: ListTile(
+              title: Text(
+                product['productName'],
                 style: TextStyle(color: Colors.white),
               ),
-              SizedBox(width: 10),
-              IconButton(
-                onPressed: () => cartModel.removeFromCart(product),
-                icon: Icon(Icons.remove, color: Colors.white),
+              subtitle: Text(
+                "${product['price']}",
+                style: TextStyle(color: const Color.fromARGB(255, 14, 13, 13)),
               ),
-              IconButton(
-                onPressed: () => cartModel.addToCart(product),
-                icon: Icon(Icons.add, color: Colors.white),
+              trailing: Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Text(
+                    quantity.toString(),
+                    style: TextStyle(color: Colors.white),
+                  ),
+                  SizedBox(width: 10),
+                  IconButton(
+                    onPressed: () => cartModel.removeFromCart(product),
+                    icon: Icon(Icons.remove, color: Colors.white),
+                  ),
+                  IconButton(
+                    onPressed: () => cartModel.addToCart(product),
+                    icon: Icon(Icons.add, color: Colors.white),
+                  ),
+                  IconButton(
+                    onPressed: () => cartModel.clearProduct(productId),
+                    icon: Icon(Icons.delete, color: Colors.white),
+                  ),
+                ],
               ),
-              IconButton(
-                onPressed: () => cartModel.clearProduct(productId),
-                icon: Icon(Icons.delete, color: Colors.white),
-              ),
-            ],
+            ),
           ),
-        ),
+          SizedBox(height: 15), // Abstand zwischen den Produktzeilen
+        ],
       );
     } else {
       return SizedBox.shrink(); // Return an empty widget if quantity is 0
