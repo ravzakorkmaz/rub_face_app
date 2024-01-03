@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:rub_face_app/components/app_bar.dart';
+import 'package:rub_face_app/components/bottom_bar.dart';
 import 'package:rub_face_app/models/cart_model.dart';
 import 'package:provider/provider.dart';
 
@@ -26,9 +27,12 @@ class CartPage extends StatelessWidget {
                   ],
                 ),
               ),
+              //SizedBox(height: 20),
+              //_buildBottomBar(cartModel), // Call the new method to build the bottom bar
             ],
           ),
         ),
+        bottomNavigationBar: _buildBottomBar(cartModel),
       ),
     );
   }
@@ -48,11 +52,14 @@ class CartPage extends StatelessWidget {
             child: ListTile(
               title: Text(
                 product['productName'],
-                style: TextStyle(color: Colors.white),
+                style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold),
               ),
               subtitle: Text(
-                "${product['price']}",
-                style: TextStyle(color: const Color.fromARGB(255, 14, 13, 13)),
+                "${product['price']} €",
+                style: TextStyle(color: Colors.white),
               ),
               trailing: Row(
                 mainAxisSize: MainAxisSize.min,
@@ -84,6 +91,12 @@ class CartPage extends StatelessWidget {
     } else {
       return SizedBox.shrink(); // Return an empty widget if quantity is 0
     }
+  }
+
+  Widget _buildBottomBar(CartModel cartModel) {
+    double total = cartModel.calculateTotal(productList);
+
+    return BottomBar(total: total);
   }
 
   Map<String, dynamic> getProductDetails(

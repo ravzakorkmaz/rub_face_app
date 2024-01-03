@@ -30,15 +30,15 @@ class _MenuPageState extends State<MenuPage> {
         'rating': '5.0',
         'imagePath': 'lib/images/cat_front.png',
         'description':
-            'Druck dir deine eigene Spielfigur und beeindrucke dein Umfeld.',
-        'price': '€ 12,00',
+            'Druck dir deine eigene Spielfigur und beeindrucke dein Umfeld.sjdkbvehdfbevgflwevdgcjhgkljjvjcghfguhijökhljghfjgdtfztuziljkhjmhfgjzkuziljnbvfjzuziujgfdztuziujk,bnmvhfjztuzihkDruck dir deine eigene Spielfigur und beeindrucke dein Umfeld.sjdkbvehdfbevgflwevdgcjhgkljjvjcghfguhijökhljghfjgdtfztuziljkhjmhfgjzkuziljnbvfjzuziujgfdztuziujk,bnmvhfjztuzihkDruck dir deine eigene Spielfigur und beeindrucke dein Umfeld.sjdkbvehdfbevgflwevdgcjhgkljjvjcghfguhijökhljghfjgdtfztuziljkhjmhfgjzkuziljnbvfjzuziujgfdztuziujk,bnmvhfjztuzihk',
+        'price': '12.00',
       },
       {
         'productName': 'Head',
         'rating': '4.0',
         'imagePath': 'lib/images/head_front.png',
         'description': 'Kafa leyla',
-        'price': '€ 15,00',
+        'price': '15.00',
       },
     ];
 

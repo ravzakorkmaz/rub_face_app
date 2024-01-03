@@ -14,6 +14,7 @@ class ProductPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double screenHeight = MediaQuery.of(context).size.height;
     return FractionallySizedBox(
       child: Consumer<CartModel>(
         builder: (context, cartModel, child) => Scaffold(
@@ -86,9 +87,10 @@ class ProductPage extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(height: 8),
+              SizedBox(height: screenHeight * 0.05),
               Expanded(
                 child: Container(
+                  height: MediaQuery.of(context).size.height * 0.4,
                   padding: EdgeInsets.all(25),
                   color: Color.fromARGB(255, 23, 54, 92),
                   child: Column(

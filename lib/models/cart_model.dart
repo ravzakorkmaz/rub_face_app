@@ -40,6 +40,42 @@ class CartModel extends ChangeNotifier {
     return total;
   }
 
+  /*double calculateTotal(List<Map<String, dynamic>> productList) {
+    double total = 0.0;
+    for (var productId in _cartItems.keys) {
+      final product = productList.firstWhere(
+        (item) => item['productName'] == productId,
+        orElse: () => {'productName': 'Product not found', 'price': '0.00'},
+      );
+      final quantity = _cartItems[productId] ?? 0;
+      total += quantity * double.parse(product['price']);
+    }
+    return total;
+  }*/
+
+  double calculateTotal(List<Map<String, dynamic>> productList) {
+    double total = 0.0;
+    for (var productId in _cartItems.keys) {
+      final product = productList.firstWhere(
+        (item) => item['productName'] == productId,
+        orElse: () => {'productName': 'Product not found', 'price': '0.00'},
+      );
+      final quantity = _cartItems[productId] ?? 0;
+      final priceString = product['price'];
+
+      // Überprüfen, ob die Preis-Zeichenkette gültige numerische Werte enthält
+      if (priceString != null && priceString.isNotEmpty) {
+        try {
+          total += quantity * double.parse(priceString);
+        } catch (e) {
+          // Fehler beim Parsen des Preises
+          print('Fehler beim Parsen des Preises: $e');
+        }
+      }
+    }
+    return total;
+  }
+
   void clearProduct(String productId) {
     _cartItems[productId] = 0;
     notifyListeners();
