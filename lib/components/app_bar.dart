@@ -34,9 +34,8 @@ class _MyAppBarState extends State<MyAppBar> {
       centerTitle: true,
       //backgroundColor: Colors.transparent,
       //backgroundColor: Color.fromARGB(255, 146, 192, 29),
-      //backgroundColor: Color.fromARGB(255, 23, 54, 92),
-      backgroundColor:
-          _isDarkMode ? Colors.black : Color.fromARGB(255, 23, 54, 92),
+      backgroundColor: Color.fromARGB(255, 23, 54, 92),
+      //backgroundColor: _isDarkMode ? Colors.black : Color.fromARGB(255, 23, 54, 92),
 
       elevation: 0,
       actions: [
