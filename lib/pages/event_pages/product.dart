@@ -18,7 +18,10 @@ class ProductPage extends StatelessWidget {
     return FractionallySizedBox(
       child: Consumer<CartModel>(
         builder: (context, cartModel, child) => Scaffold(
-          appBar: MyAppBar(myTitle: 'M A K E R S P A C E'),
+          appBar: MyAppBar(
+            myTitle: 'M A K E R S P A C E',
+            productList: productList,
+          ),
           backgroundColor: Colors.white,
           body: Column(
             crossAxisAlignment: CrossAxisAlignment.start,

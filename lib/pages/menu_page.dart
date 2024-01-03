@@ -64,7 +64,10 @@ class _MenuPageState extends State<MenuPage> {
     return Scaffold(
       //backgroundColor: _isDarkMode ? Colors.black : Color.fromARGB(255, 215, 165, 187),
       backgroundColor: _isDarkMode ? Colors.black : Colors.white,
-      appBar: MyAppBar(myTitle: 'M A K E R S P A C E'),
+      appBar: MyAppBar(
+        myTitle: 'M A K E R S P A C E',
+        productList: products,
+      ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [

@@ -13,7 +13,10 @@ class CartPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Consumer<CartModel>(
       builder: (context, cartModel, child) => Scaffold(
-        appBar: MyAppBar(myTitle: 'W A R E N K O R B'),
+        appBar: MyAppBar(
+          myTitle: 'W A R E N K O R B',
+          productList: productList,
+        ),
         backgroundColor: Colors.white,
         body: Padding(
           padding: const EdgeInsets.all(25.0),
