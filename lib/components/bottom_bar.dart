@@ -14,7 +14,7 @@ class BottomBar extends StatelessWidget {
       width: double.infinity,
       height: screenHeight * 0.15,
       padding: EdgeInsets.all(10),
-      //color: Color.fromARGB(255, 23, 54, 92),
+      //color: Color.fromARGB(255,0,53,96),
       decoration: BoxDecoration(
         color: Colors.white,
         boxShadow: [
@@ -36,14 +36,14 @@ class BottomBar extends StatelessWidget {
                 Text(
                   'GESAMTSUMME', // Format the total as needed
                   style: TextStyle(
-                      color: Color.fromARGB(255, 23, 54, 92),
+                      color: Color.fromARGB(255, 0, 53, 96),
                       fontSize: 18,
                       fontWeight: FontWeight.bold),
                 ),
                 Text(
                   '${total.toStringAsFixed(2)} €', // Format the total as needed
                   style: TextStyle(
-                      color: Color.fromARGB(255, 23, 54, 92),
+                      color: Color.fromARGB(255, 0, 53, 96),
                       fontSize: 18,
                       fontWeight: FontWeight.bold),
                 ),
