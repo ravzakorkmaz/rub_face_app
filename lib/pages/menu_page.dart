@@ -31,23 +31,76 @@ class _MenuPageState extends State<MenuPage> {
         'productName': 'Cat',
         'rating': '5.0',
         'imagePath': 'lib/images/cat_front.png',
+        'images': [
+          'lib/images/cat_front.png',
+          'lib/images/cat_right.png',
+          'lib/images/cat_left.png'
+        ],
         'description':
             'Druck dir deine eigene Spielfigur und beeindrucke dein Umfeld.sjdkbvehdfbevgflwevdgcjhgkljjvjcghfguhijökhljghfjgdtfztuziljkhjmhfgjzkuziljnbvfjzuziujgfdztuziujk,bnmvhfjztuzihkDruck dir deine eigene Spielfigur und beeindrucke dein Umfeld.sjdkbvehdfbevgflwevdgcjhgkljjvjcghfguhijökhljghfjgdtfztuziljkhjmhfgjzkuziljnbvfjzuziujgfdztuziujk,bnmvhfjztuzihkDruck dir deine eigene Spielfigur und beeindrucke dein Umfeld.sjdkbvehdfbevgflwevdgcjhgkljjvjcghfguhijökhljghfjgdtfztuziljkhjmhfgjzkuziljnbvfjzuziujgfdztuziujk,bnmvhfjztuzihk',
-        'price': '12.00',
+        'price': '7.99',
       },
       {
         'productName': 'Head',
         'rating': '4.0',
         'imagePath': 'lib/images/head_front.png',
+        'images': ['lib/images/head_front.png', 'lib/images/head_right.png'],
         'description': 'Kafa leyla',
-        'price': '15.00',
+        'price': '14.99',
       },
       {
         'productName': 'Kirby',
         'rating': '4.3',
         'imagePath': 'lib/images/kirby_front.png',
+        'images': [
+          'lib/images/kirby_front.png',
+          'lib/images/kirby_right.png',
+          'lib/images/kirby_back.png'
+        ],
         'description': 'Kirby Boy',
-        'price': '13.00',
+        'price': '4.99',
+      },
+      {
+        'productName': 'FACE House',
+        'rating': '5.0',
+        'imagePath': 'lib/images/face_house_front.png',
+        'images': [
+          'lib/images/face_house_front.png',
+          'lib/images/face_house_right.png',
+          'lib/images/face_house_left.png'
+        ],
+        'description': 'Kirby Boy',
+        'price': '24.99',
+      },
+      {
+        'productName': 'Cat Print',
+        'rating': '4.6',
+        'imagePath': 'lib/images/cat_print_front.png',
+        'images': [
+          'lib/images/cat_print_front.png',
+          'lib/images/cat_print_right.png'
+        ],
+        'description': 'Orange Cat Print',
+        'price': '8.99',
+      },
+      {
+        'productName': 'T-Shirt',
+        'rating': '4.6',
+        'imagePath': 'lib/images/tshirt_print.png',
+        'images': [
+          'lib/images/tshirt_print.png',
+          'lib/images/tshirt_front.png'
+        ],
+        'description': 'Orange Cat Print',
+        'price': '8.99',
+      },
+      {
+        'productName': 'Mega Glove',
+        'rating': '5.0',
+        'imagePath': 'lib/images/glove.png',
+        'images': ['lib/images/glove.png'],
+        'description': 'Glove Machine',
+        'price': '27.99',
       },
     ];
 

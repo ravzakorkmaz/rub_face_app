@@ -1,10 +1,20 @@
+/*import 'package:flutter/material.dart';
+import 'package:rub_face_app/cart_page.dart';
+import 'package:rub_face_app/components/app_bar.dart';
+import 'package:rub_face_app/components/button.dart';
+import 'package:provider/provider.dart';
+import 'package:rub_face_app/models/cart_model.dart';
+import 'package:rub_face_app/providers/dark_mode_provider.dart';
+import 'package:flutter_image_slideshow/flutter_image_slideshow.dart';
+*/
 import 'package:flutter/material.dart';
 import 'package:rub_face_app/cart_page.dart';
 import 'package:rub_face_app/components/app_bar.dart';
 import 'package:rub_face_app/components/button.dart';
 import 'package:provider/provider.dart';
 import 'package:rub_face_app/models/cart_model.dart';
-import 'package:rub_face_app/providers/dark_mode_provider.dart'; // Stellen Sie sicher, dass Sie den richtigen Pfad verwenden
+import 'package:rub_face_app/providers/dark_mode_provider.dart';
+import 'package:flutter_image_slideshow/flutter_image_slideshow.dart';
 
 class ProductPage extends StatelessWidget {
   final Map<String, dynamic> product;
@@ -16,6 +26,7 @@ class ProductPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double screenHeight = MediaQuery.of(context).size.height;
+    double screenWidth = MediaQuery.of(context).size.width;
 
     return FractionallySizedBox(
       child: Consumer2<CartModel, DarkModeProvider>(
@@ -30,13 +41,34 @@ class ProductPage extends StatelessWidget {
           body: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Center(
+              /*Center(
                 child: Image.asset(
                   product['imagePath'],
                   height: 250,
                 ),
+              ),*/
+              Center(
+                child: SizedBox(
+                  height: screenHeight * 0.3,
+                  child: ImageSlideshow(
+                    width: screenWidth * 0.5,
+                    height: screenHeight * 0.5,
+                    initialPage: 0,
+                    indicatorColor: Colors.blue,
+                    indicatorBackgroundColor: Colors.grey,
+                    onPageChanged: (value) {
+                      // Handle page change
+                    },
+                    children: product['images'].map<Widget>((image) {
+                      return Image.asset(
+                        image,
+                        fit: BoxFit.cover,
+                      );
+                    }).toList(),
+                  ),
+                ),
               ),
-              SizedBox(height: 20),
+              SizedBox(height: screenHeight * 0.02),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 25.0),
                 child: Row(
@@ -114,7 +146,7 @@ class ProductPage extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
                           Text(
-                            product['price'],
+                            "${product['price']} €",
                             style: TextStyle(
                                 fontSize: 20,
                                 color: Colors.white,

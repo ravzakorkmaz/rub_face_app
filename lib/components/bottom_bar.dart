@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:rub_face_app/providers/dark_mode_provider.dart';
 
 class BottomBar extends StatelessWidget {
   final double total;
@@ -7,6 +9,7 @@ class BottomBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final darkModeProvider = Provider.of<DarkModeProvider>(context);
     double screenHeight = MediaQuery.of(context).size.height;
     double screenWidth = MediaQuery.of(context).size.width;
 
@@ -16,7 +19,9 @@ class BottomBar extends StatelessWidget {
       padding: EdgeInsets.all(10),
       //color: Color.fromARGB(255,0,53,96),
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: darkModeProvider.isDarkMode
+            ? Color.fromARGB(255, 0, 53, 96)
+            : Colors.white,
         boxShadow: [
           BoxShadow(
             color: Colors.grey.withOpacity(0.5),
@@ -36,14 +41,18 @@ class BottomBar extends StatelessWidget {
                 Text(
                   'GESAMTSUMME', // Format the total as needed
                   style: TextStyle(
-                      color: Color.fromARGB(255, 0, 53, 96),
+                      color: darkModeProvider.isDarkMode
+                          ? Colors.white
+                          : Color.fromARGB(255, 0, 53, 96),
                       fontSize: 18,
                       fontWeight: FontWeight.bold),
                 ),
                 Text(
                   '${total.toStringAsFixed(2)} €', // Format the total as needed
                   style: TextStyle(
-                      color: Color.fromARGB(255, 0, 53, 96),
+                      color: darkModeProvider.isDarkMode
+                          ? Colors.white
+                          : Color.fromARGB(255, 0, 53, 96),
                       fontSize: 18,
                       fontWeight: FontWeight.bold),
                 ),

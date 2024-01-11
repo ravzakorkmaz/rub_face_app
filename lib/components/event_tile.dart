@@ -57,7 +57,7 @@ class EventTile extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                price,
+                "${price} €",
                 style: TextStyle(
                   color: Colors.white,
                 ),
