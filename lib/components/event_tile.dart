@@ -26,7 +26,8 @@ class EventTile extends StatelessWidget {
     return Container(
       width: MediaQuery.of(context).size.width * 0.5,
       height: MediaQuery.of(context).size.height * 0.3,
-      margin: EdgeInsets.symmetric(horizontal: 25),
+      margin: EdgeInsets.symmetric(
+          horizontal: MediaQuery.of(context).size.width * 0.05),
       padding: EdgeInsets.all(MediaQuery.of(context).size.width * 0.03),
       decoration: BoxDecoration(
         color: darkModeProvider.isDarkMode
@@ -40,7 +41,7 @@ class EventTile extends StatelessWidget {
           GestureDetector(
             child: Image.asset(
               imagePath,
-              height: MediaQuery.of(context).size.height * 0.25,
+              height: MediaQuery.of(context).size.height * 0.22,
               width: MediaQuery.of(context).size.width * 0.5,
             ),
             onTap: details,

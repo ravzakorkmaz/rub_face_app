@@ -28,6 +28,26 @@ class _MenuPageState extends State<MenuPage> {
     //Product list
     List<Map<String, dynamic>> products = [
       {
+        'productName': 'Mega Glove',
+        'rating': '5.0',
+        'imagePath': 'lib/images/glove.png',
+        'images': ['lib/images/glove.png'],
+        'description': 'Glove Machine',
+        'price': '27.99',
+      },
+      {
+        'productName': 'Kirby',
+        'rating': '4.3',
+        'imagePath': 'lib/images/kirby_front.png',
+        'images': [
+          'lib/images/kirby_front.png',
+          'lib/images/kirby_right.png',
+          'lib/images/kirby_back.png'
+        ],
+        'description': 'Kirby Boy',
+        'price': '4.99',
+      },
+      {
         'productName': 'Cat',
         'rating': '5.0',
         'imagePath': 'lib/images/cat_front.png',
@@ -47,18 +67,6 @@ class _MenuPageState extends State<MenuPage> {
         'images': ['lib/images/head_front.png', 'lib/images/head_right.png'],
         'description': 'Kafa leyla',
         'price': '14.99',
-      },
-      {
-        'productName': 'Kirby',
-        'rating': '4.3',
-        'imagePath': 'lib/images/kirby_front.png',
-        'images': [
-          'lib/images/kirby_front.png',
-          'lib/images/kirby_right.png',
-          'lib/images/kirby_back.png'
-        ],
-        'description': 'Kirby Boy',
-        'price': '4.99',
       },
       {
         'productName': 'FACE House',
@@ -93,14 +101,6 @@ class _MenuPageState extends State<MenuPage> {
         ],
         'description': 'Orange Cat Print',
         'price': '8.99',
-      },
-      {
-        'productName': 'Mega Glove',
-        'rating': '5.0',
-        'imagePath': 'lib/images/glove.png',
-        'images': ['lib/images/glove.png'],
-        'description': 'Glove Machine',
-        'price': '27.99',
       },
     ];
 
@@ -139,9 +139,12 @@ class _MenuPageState extends State<MenuPage> {
             margin: EdgeInsets.symmetric(
                 horizontal: horizontalSpacing, vertical: verticalSpacing),
             decoration: BoxDecoration(
-              color: Color.fromARGB(255, 0, 53, 96),
-              borderRadius: BorderRadius.circular(20),
-            ),
+                color: Provider.of<DarkModeProvider>(context).isDarkMode
+                    ? Colors.transparent
+                    : Color.fromARGB(255, 0, 53, 96),
+                borderRadius: BorderRadius.circular(20),
+                border: Border.all(
+                    color: Color.fromARGB(255, 0, 53, 96), width: 2)),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -162,13 +165,13 @@ class _MenuPageState extends State<MenuPage> {
                   ],
                 ),
                 Image.asset(
-                  'lib/images/head_right.png',
-                  height: 120,
+                  'lib/images/face_house_front.png',
+                  height: screenHeight * 0.15,
                 )
               ],
             ),
           ),
-          SizedBox(height: screenWidth * 0.05),
+          SizedBox(height: screenWidth * 0.01),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 25.0),
             child: TextField(
@@ -205,7 +208,7 @@ class _MenuPageState extends State<MenuPage> {
                       : Color.fromARGB(255, 0, 53, 96)),
             ),
           ),
-          SizedBox(height: screenWidth * 0.02),
+          SizedBox(height: screenWidth * 0.03),
           Expanded(
             child: ListView.builder(
               itemBuilder: (context, index) => EventList[index],
@@ -213,7 +216,7 @@ class _MenuPageState extends State<MenuPage> {
               scrollDirection: Axis.horizontal,
             ),
           ),
-          SizedBox(height: screenWidth * 0.02),
+          SizedBox(height: screenWidth * 0.05),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 25.0),
             child: Text(
@@ -226,22 +229,26 @@ class _MenuPageState extends State<MenuPage> {
                       : Color.fromARGB(255, 0, 53, 96)),
             ),
           ),
-          SizedBox(height: screenWidth * 0.02),
+          SizedBox(height: screenWidth * 0.05),
           Container(
+            height: screenHeight * 0.12,
             margin: EdgeInsets.symmetric(horizontal: 25.0),
             padding: EdgeInsets.all(8),
             decoration: BoxDecoration(
-              color: Color.fromARGB(255, 0, 53, 96),
-              borderRadius: BorderRadius.circular(20),
-            ),
+                color: Provider.of<DarkModeProvider>(context).isDarkMode
+                    ? Colors.transparent
+                    : Color.fromARGB(255, 0, 53, 96),
+                borderRadius: BorderRadius.circular(20),
+                border: Border.all(
+                    color: Color.fromARGB(255, 0, 53, 96), width: 2)),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 Image.asset(
                   products[0]['imagePath'],
-                  height: 90,
+                  height: 250,
                 ),
-                SizedBox(height: screenWidth * 0.1),
+                //SizedBox(height: screenWidth * 0.1),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -255,7 +262,7 @@ class _MenuPageState extends State<MenuPage> {
                     ),
                     SizedBox(height: screenWidth * 0.05),
                     Text(
-                      products[0]['price'],
+                      '${products[0]['price']} €',
                       style: TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.bold,
@@ -267,7 +274,7 @@ class _MenuPageState extends State<MenuPage> {
               ],
             ),
           ),
-          SizedBox(height: screenWidth * 0.01),
+          SizedBox(height: screenWidth * 0.05),
         ],
       ),
     );
