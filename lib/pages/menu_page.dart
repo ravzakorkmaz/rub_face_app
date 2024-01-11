@@ -246,7 +246,7 @@ class _MenuPageState extends State<MenuPage> {
               children: [
                 Image.asset(
                   products[0]['imagePath'],
-                  height: 250,
+                  //height: screenHeight,
                 ),
                 //SizedBox(height: screenWidth * 0.1),
                 Column(
