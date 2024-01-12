@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:rub_face_app/cart_page.dart';
 import 'package:rub_face_app/models/cart_model.dart';
+import 'package:rub_face_app/pages/makerspace_page.dart';
 import 'package:rub_face_app/providers/dark_mode_provider.dart';
 import 'package:rub_face_app/pages/event_pages/product.dart';
 import 'package:rub_face_app/pages/menu_page.dart';
@@ -45,6 +46,9 @@ class MyApp extends StatelessWidget {
         '/cartpage': (context) => CartPage(
               productList: [],
             ),
+        '/makerspacepage': (context) => MakerspacePage(
+              productList: [],
+            )
       },
     );
   }

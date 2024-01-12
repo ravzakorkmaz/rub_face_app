@@ -5,6 +5,7 @@ import 'package:rub_face_app/components/button.dart';
 import 'package:rub_face_app/components/event_tile.dart';
 import 'package:rub_face_app/pages/event_pages/product.dart';
 import 'package:provider/provider.dart';
+import 'package:rub_face_app/pages/makerspace_page.dart';
 import 'package:rub_face_app/providers/dark_mode_provider.dart';
 
 class MenuPage extends StatefulWidget {
@@ -276,7 +277,14 @@ class _MenuPageState extends State<MenuPage> {
                               fit: BoxFit.cover,
                             ),
                           ),
-                          //onTap: ,
+                          onTap: () => Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => MakerspacePage(
+                                productList: products,
+                              ),
+                            ),
+                          ),
                         ),
                         Text(
                           "https://makerspace.ruhr-uni-bochum.de",
