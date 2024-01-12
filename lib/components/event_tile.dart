@@ -30,11 +30,18 @@ class EventTile extends StatelessWidget {
           horizontal: MediaQuery.of(context).size.width * 0.05),
       padding: EdgeInsets.all(MediaQuery.of(context).size.width * 0.03),
       decoration: BoxDecoration(
-        color: darkModeProvider.isDarkMode
+          /*color: darkModeProvider.isDarkMode
             ? Color.fromARGB(255, 34, 40, 53)
-            : Color.fromARGB(255, 146, 192, 29),
-        borderRadius: BorderRadius.circular(20),
-      ),
+            : Color.fromARGB(255, 146, 192, 29),*/
+          color: darkModeProvider.isDarkMode
+              ? Color.fromARGB(255, 8, 22, 35).withOpacity(0.8)
+              : Color.fromARGB(255, 146, 192, 29).withOpacity(0.75),
+          borderRadius: BorderRadius.circular(20),
+          border: Border.all(
+              color: darkModeProvider.isDarkMode
+                  ? Color.fromARGB(255, 0, 53, 96)
+                  : Color.fromARGB(255, 0, 53, 96).withOpacity(0.15),
+              width: 2)),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [

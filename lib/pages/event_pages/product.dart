@@ -134,12 +134,22 @@ class ProductPage extends StatelessWidget {
               SizedBox(height: screenHeight * 0.05),
               Expanded(
                 child: Container(
+                  decoration: BoxDecoration(
+                    boxShadow: [
+                      BoxShadow(
+                        color: Color.fromARGB(255, 0, 53, 96),
+                        spreadRadius: 2,
+                        blurRadius: 1,
+                        offset: Offset(0, 3),
+                      ),
+                    ],
+                  ),
                   height: MediaQuery.of(context).size.height * 0.4,
                   padding: EdgeInsets.all(25),
                   /*color: darkModeProvider.isDarkMode
                       ? Colors.black
                       : Color.fromARGB(255,0,53,96),*/
-                  color: Color.fromARGB(255, 0, 53, 96),
+                  //color: Color.fromARGB(255, 0, 53, 96),
                   child: Column(
                     children: [
                       Row(

@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:rub_face_app/providers/dark_mode_provider.dart';
 
-class MyButton extends StatelessWidget {
+class StartButton extends StatelessWidget {
   final String myText;
   final void Function()? event;
 
-  const MyButton({
+  const StartButton({
     Key? key,
     required this.myText,
     required this.event,
@@ -22,9 +22,10 @@ class MyButton extends StatelessWidget {
       child: Container(
         padding: EdgeInsets.all(16),
         decoration: BoxDecoration(
-          color: darkModeProvider.isDarkMode
+          /*color: darkModeProvider.isDarkMode
               ? Color.fromARGB(255, 171, 172, 180)
-              : Color.fromARGB(255, 146, 192, 29),
+              : Color.fromARGB(255, 146, 192, 29),*/
+          color: Colors.white,
           borderRadius: BorderRadius.circular(20),
         ),
         child: Row(
@@ -33,7 +34,7 @@ class MyButton extends StatelessWidget {
             Text(
               myText,
               style: TextStyle(
-                color: Colors.white,
+                color: Color.fromARGB(255, 8, 22, 35),
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
               ),
@@ -41,7 +42,7 @@ class MyButton extends StatelessWidget {
             SizedBox(width: 10),
             Icon(
               Icons.arrow_forward,
-              color: Colors.white,
+              color: Color.fromARGB(255, 8, 22, 35),
             ),
           ],
         ),

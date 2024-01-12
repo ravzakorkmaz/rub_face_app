@@ -29,38 +29,50 @@ class _MyAppBarState extends State<MyAppBar> {
   Widget build(BuildContext context) {
     bool _isDarkMode = Provider.of<DarkModeProvider>(context).isDarkMode;
 
-    return AppBar(
-      title: Text(widget.myTitle),
-      centerTitle: true,
-      //backgroundColor: Colors.transparent,
-      //backgroundColor: Color.fromARGB(255, 146, 192, 29),
-      backgroundColor: Color.fromARGB(255, 0, 53, 96),
-      //backgroundColor: _isDarkMode ? Colors.black : Color.fromARGB(255,0,53,96),
+    return Container(
+      decoration: BoxDecoration(
+        boxShadow: [
+          BoxShadow(
+            color: Color.fromARGB(255, 0, 53, 96),
+            spreadRadius: 2,
+            blurRadius: 1,
+            offset: Offset(0, 3),
+          ),
+        ],
+      ),
+      child: AppBar(
+        title: Text(widget.myTitle),
+        centerTitle: true,
+        //backgroundColor: Colors.transparent,
+        //backgroundColor: Color.fromARGB(255, 146, 192, 29),
+        backgroundColor: Color.fromARGB(255, 0, 53, 96),
+        //backgroundColor: _isDarkMode ? Colors.black : Color.fromARGB(255,0,53,96),
 
-      elevation: 0,
-      actions: [
-        IconButton(
-          onPressed: () {
-            //_isDarkMode = !_isDarkMode;
-            Provider.of<DarkModeProvider>(context, listen: false)
-                .toggleDarkMode();
-          },
-          icon: Icon(Icons.dark_mode),
-        ),
-        Padding(
-          padding: const EdgeInsets.only(right: 15.0),
-          child: IconButton(
-              icon: Icon(Icons.shopping_cart),
-              /*onPressed: () => Navigator.pushNamed(context, '/cartpage',
-                  arguments: _currentProductList)),*/
-              onPressed: () => Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) =>
-                        CartPage(productList: _currentProductList),
-                  ))),
-        ),
-      ],
+        elevation: 0,
+        actions: [
+          IconButton(
+            onPressed: () {
+              //_isDarkMode = !_isDarkMode;
+              Provider.of<DarkModeProvider>(context, listen: false)
+                  .toggleDarkMode();
+            },
+            icon: Icon(Icons.dark_mode),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(right: 15.0),
+            child: IconButton(
+                icon: Icon(Icons.shopping_cart),
+                /*onPressed: () => Navigator.pushNamed(context, '/cartpage',
+                    arguments: _currentProductList)),*/
+                onPressed: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) =>
+                          CartPage(productList: _currentProductList),
+                    ))),
+          ),
+        ],
+      ),
     );
   }
 }
