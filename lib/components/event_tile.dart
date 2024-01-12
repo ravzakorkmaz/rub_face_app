@@ -36,6 +36,9 @@ class EventTile extends StatelessWidget {
           color: darkModeProvider.isDarkMode
               ? Color.fromARGB(255, 8, 22, 35).withOpacity(0.8)
               : Color.fromARGB(255, 146, 192, 29).withOpacity(0.75),
+          /*color: darkModeProvider.isDarkMode
+              ? Color.fromARGB(255, 8, 22, 35).withOpacity(0.8)
+              : Color.fromARGB(255, 0, 53, 96).withOpacity(0.9),*/
           borderRadius: BorderRadius.circular(20),
           border: Border.all(
               color: darkModeProvider.isDarkMode
