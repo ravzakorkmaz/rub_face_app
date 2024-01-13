@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:rub_face_app/cart_page.dart';
+import 'package:rub_face_app/pages/cart_page.dart';
 import 'package:rub_face_app/components/app_bar.dart';
 import 'package:rub_face_app/components/button.dart';
 import 'package:provider/provider.dart';

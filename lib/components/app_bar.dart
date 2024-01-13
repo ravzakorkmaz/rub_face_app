@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:rub_face_app/cart_page.dart';
+import 'package:rub_face_app/pages/cart_page.dart';
 import 'package:rub_face_app/providers/dark_mode_provider.dart';
 
 class MyAppBar extends StatefulWidget implements PreferredSizeWidget {
