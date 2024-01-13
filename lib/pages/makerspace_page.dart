@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:rub_face_app/components/app_bar.dart';
@@ -115,9 +117,6 @@ class MakerspacePage extends StatelessWidget {
                         initialPage: 0,
                         indicatorColor: Color.fromARGB(255, 193, 255, 37),
                         indicatorBackgroundColor: Colors.grey,
-                        onPageChanged: (value) {
-                          // Handle page change
-                        },
                         children: space['images'].map<Widget>((image) {
                           return Padding(
                             padding: EdgeInsets.symmetric(
@@ -129,6 +128,15 @@ class MakerspacePage extends StatelessWidget {
                           );
                         }).toList(),
                       ),
+                    ),
+                    Text(
+                      'https://makerspace.ruhr-uni-bochum.de',
+                      style: TextStyle(
+                          fontSize: 8,
+                          color:
+                              Provider.of<DarkModeProvider>(context).isDarkMode
+                                  ? Colors.white
+                                  : Color.fromARGB(255, 0, 53, 96)),
                     ),
                   ],
                 ),

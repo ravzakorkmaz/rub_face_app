@@ -31,52 +31,64 @@ class _MenuPageState extends State<MenuPage> {
         'rating': '5.0',
         'imagePath': 'lib/images/glove.png',
         'images': ['lib/images/glove.png'],
-        'description': 'Glove Machine',
+        'space': 'Digitallabor + Holzwerkstatt',
+        'description':
+            "Schlag' ein neues Kapitel in der Wired-Welt auf mit dem ultimativen Infinity Handschuh Prototypen – hier wird nicht nur gestylt, sondern auch geschaltet! 💥🔗 Mit einem Snap lässt du nicht nur die Fashion-Welt erzittern, sondern auch die Technik. Der Wired Handschuh – wo Stil auf Schaltung trifft. Hol dir die Macht der Infinity Fashion und zeig, dass du nicht nur Trends setzt, sondern auch Verbindungen herstellst! 🚀🧤#WiredInfinity #FashionWithPower",
         'price': '27.99',
       },
       {
         'productName': 'Kirby',
-        'rating': '4.3',
+        'rating': '4.6',
         'imagePath': 'lib/images/kirby_front.png',
         'images': [
           'lib/images/kirby_front.png',
           'lib/images/kirby_right.png',
           'lib/images/kirby_back.png'
         ],
-        'description': 'Kirby Boy',
+        'space': 'Designlabor',
+        'description':
+            "Tauche ein in die fabelhafte Welt des Lilanen 3D-gedruckten Kirby – ein absolutes Must-Have für alle, die Stil und Niedlichkeit lieben! 🌈🎮 Mit diesem einzigartigen Kunstwerk bringst du nicht nur Farbe in deinen Raum, sondern auch das ikonische Lächeln von Kirby. Jeder Druck ist ein Unikat und lässt deine Liebe für Gaming und Ästhetik verschmelzen. Gönn' dir den Lilanen Kirby 3D-Druck und mach aus deinem Zuhause einen Ort voller Freude und Kreativität! 🍭👾 #KirbyArtistry #3DPrintedJoy",
         'price': '4.99',
       },
       {
         'productName': 'Kitten',
-        'rating': '5.0',
+        'rating': '4.8',
         'imagePath': 'lib/images/cat_front.png',
         'images': [
           'lib/images/cat_front.png',
           'lib/images/cat_right.png',
           'lib/images/cat_left.png'
         ],
+        'space': 'Designlabor',
         'description':
-            'Druck dir deine eigene Spielfigur und beeindrucke dein Umfeld.sjdkbvehdfbevgflwevdgcjhgkljjvjcghfguhijökhljghfjgdtfztuziljkhjmhfgjzkuziljnbvfjzuziujgfdztuziujk,bnmvhfjztuzihkDruck dir deine eigene Spielfigur und beeindrucke dein Umfeld.sjdkbvehdfbevgflwevdgcjhgkljjvjcghfguhijökhljghfjgdtfztuziljkhjmhfgjzkuziljnbvfjzuziujgfdztuziujk,bnmvhfjztuzihkDruck dir deine eigene Spielfigur und beeindrucke dein Umfeld.sjdkbvehdfbevgflwevdgcjhgkljjvjcghfguhijökhljghfjgdtfztuziljkhjmhfgjzkuziljnbvfjzuziujgfdztuziujk,bnmvhfjztuzihk',
+            "Verleih deinem Raum eine Prise Eleganz mit dem Weißen 3D-gedruckten Katzencharme – ein Kunstwerk, das Minimalismus und verspielte Raffinesse vereint! 🐾✨ Dieser einzigartige Druck fängt die Magie der Katzenwelt in klaren Linien ein und setzt einen stylischen Akzent in jedem Raum. Hol dir die Katzenfigur und lass deine Umgebung von der Schlichtheit und Anmut dieser faszinierenden Kreation durchdringen. Perfekt für Liebhaber von modernem Design und Katzenliebhaber gleichermaßen! 🌟🐱 #EleganceIn3D #CatArtistry",
         'price': '7.99',
       },
       {
         'productName': 'The Mask',
         'rating': '4.0',
         'imagePath': 'lib/images/head_front.png',
-        'images': ['lib/images/head_front.png', 'lib/images/head_right.png'],
-        'description': 'Kafa leyla',
+        'images': [
+          'lib/images/head_front.png',
+          'lib/images/head_right.png',
+        ],
+        'space': 'Designlabor',
+        'description':
+            "Bringe mit unserer roten 3D-gedruckten Maske einen Hauch von Rätselhaftigkeit und Stil in deine Raumdekoration! 🔥🎭 Diese faszinierende Maske ist mehr als nur ein Dekorationsstück – sie ist ein Statement für Eleganz und Individualität. Die lebendige rote Farbe verleiht jedem Raum einen Hauch von Leidenschaft und Klasse, während die einzigartige Struktur einen zeitgenössischen und mysteriösen Touch hinzufügt. Hol sie dir und verleihe deinem Raum eine kunstvolle Note voller Charme und Geheimnis! 💫🌹 #RoteMaskenkunst #EleganzImDekor",
         'price': '14.99',
       },
       {
         'productName': 'FACEhausen',
-        'rating': '5.0',
+        'rating': '4.2',
         'imagePath': 'lib/images/face_house_front.png',
         'images': [
           'lib/images/face_house_front.png',
           'lib/images/face_house_right.png',
           'lib/images/face_house_left.png'
         ],
-        'description': 'Kirby Boy',
+        'space': 'Holzwerkstatt',
+        'description':
+            "Entdecke die Magie von FACEhausen, deiner ganz persönlichen Schatztruhe in Form eines bezaubernden Holzhauses! 🏡🌿 Diese einzigartige Schatulle erinnert an eine kleine Oase der Gemütlichkeit. Ihr Charme liegt in den feinen Details, die eine warme und einladende Atmosphäre schaffen. Perfekt, um deine Lieblingsstücke stilvoll aufzubewahren oder einfach als dekoratives Highlight in jedem Raum. Hol dir dieses zauberhafte Holzhaus und lass FACEhausen zu deinem eigenen Ort der Magie werden! ✨ #MagischeSchatztruhe #FACEhausenCharm",
         'price': '24.99',
       },
       {
@@ -87,18 +99,22 @@ class _MenuPageState extends State<MenuPage> {
           'lib/images/cat_print_front.png',
           'lib/images/cat_print_right.png'
         ],
-        'description': 'Orange Cat Print',
+        'space': 'Textillabor',
+        'description':
+            "Tauche ein in die Welt von 'Simba' – unser geheimnisvoller Begleiter auf einem katzigen Abenteuer durch Stoff und Stil! 🐾🌟  Dieser zauberhafte Textildruck ist mehr als nur ein Muster; er ist eine subtile Erinnerung an die spielerische Magie von Katzen. Hol dir diesen einzigartigen Aufdruck und lass Simbas elegante Präsenz deine Kleidung verzieren. Ein Hauch von katziger Kreativität, um deine Garderobe mit Stil und Persönlichkeit zu bereichern! 🐱👕 #SimbaTextilMagie #KatzigeKreativität",
         'price': '8.99',
       },
       {
         'productName': 'Print Pascal',
-        'rating': '4.6',
+        'rating': '4.0',
         'imagePath': 'lib/images/tshirt_print.png',
         'images': [
           'lib/images/tshirt_print.png',
           'lib/images/tshirt_front.png'
         ],
-        'description': 'Orange Cat Print',
+        'space': 'Textillabor',
+        'description':
+            "Verleihe deiner Kleidung einen Hauch von exotischem Charme mit unserem einzigartigen Textildruck 'Pascal'. Diese kreative Mischung aus Eidechse und Chamäleon, gekrönt mit königlichem Flair und einer ausgestreckten Zunge, sorgt für einen verspielten und individuellen Look. Hol dir Pascal auf deinen Stoff und zeige deine Lust am kreativen Stil! 🦎👑👕 #PascalStyle #VerspielterAufdruck",
         'price': '8.99',
       },
     ];
@@ -267,6 +283,7 @@ class _MenuPageState extends State<MenuPage> {
                   children: [
                     Column(
                       children: [
+                        SizedBox(height: screenHeight * 0.005),
                         GestureDetector(
                           child: ClipRRect(
                             borderRadius: BorderRadius.circular(10.0),
@@ -289,7 +306,7 @@ class _MenuPageState extends State<MenuPage> {
                         Text(
                           "https://makerspace.ruhr-uni-bochum.de",
                           style: TextStyle(
-                            color: Colors.black,
+                            color: Colors.white,
                             fontSize: 6.0,
                             fontWeight: FontWeight.bold,
                           ),

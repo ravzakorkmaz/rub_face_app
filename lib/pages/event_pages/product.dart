@@ -6,6 +6,7 @@ import 'package:provider/provider.dart';
 import 'package:rub_face_app/models/cart_model.dart';
 import 'package:rub_face_app/providers/dark_mode_provider.dart';
 import 'package:flutter_image_slideshow/flutter_image_slideshow.dart';
+import 'package:intl/intl.dart';
 
 class ProductPage extends StatelessWidget {
   final Map<String, dynamic> product;
@@ -32,12 +33,6 @@ class ProductPage extends StatelessWidget {
           body: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              /*Center(
-                child: Image.asset(
-                  product['imagePath'],
-                  height: 250,
-                ),
-              ),*/
               Center(
                 child: SizedBox(
                   height: screenHeight * 0.3,
@@ -45,11 +40,9 @@ class ProductPage extends StatelessWidget {
                     width: screenWidth * 0.5,
                     height: screenHeight * 0.5,
                     initialPage: 0,
-                    indicatorColor: Colors.blue,
+                    indicatorColor:
+                        Color.fromARGB(255, 146, 192, 29).withOpacity(0.75),
                     indicatorBackgroundColor: Colors.grey,
-                    onPageChanged: (value) {
-                      // Handle page change
-                    },
                     children: product['images'].map<Widget>((image) {
                       return Image.asset(
                         image,
@@ -98,7 +91,8 @@ class ProductPage extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 25.0),
                 child: Text(
-                  "Test Text wo taucht das auf?",
+                  product['space'],
+                  textAlign: TextAlign.center,
                   style: TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
@@ -113,6 +107,7 @@ class ProductPage extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(horizontal: 25.0),
                 child: Text(
                   product['description'],
+                  textAlign: TextAlign.justify,
                   style: TextStyle(
                     fontSize: 16,
                     color: darkModeProvider.isDarkMode
@@ -122,7 +117,7 @@ class ProductPage extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(height: screenHeight * 0.05),
+              SizedBox(height: screenHeight * 0.02),
               Expanded(
                 child: Container(
                   decoration: BoxDecoration(
@@ -137,10 +132,6 @@ class ProductPage extends StatelessWidget {
                   ),
                   height: MediaQuery.of(context).size.height * 0.4,
                   padding: EdgeInsets.all(25),
-                  /*color: darkModeProvider.isDarkMode
-                      ? Colors.black
-                      : Color.fromARGB(255,0,53,96),*/
-                  //color: Color.fromARGB(255, 0, 53, 96),
                   child: Column(
                     children: [
                       Row(
@@ -190,7 +181,7 @@ class ProductPage extends StatelessWidget {
                           )
                         ],
                       ),
-                      const SizedBox(height: 20),
+                      SizedBox(height: 20),
                       MyButton(
                         myText:
                             "Zum Einkaufswagen (${cartModel.getTotalItems()})",
