@@ -22,10 +22,14 @@ class MyButton extends StatelessWidget {
       child: Container(
         padding: EdgeInsets.all(16),
         decoration: BoxDecoration(
-          color: darkModeProvider.isDarkMode
+          /*color: darkModeProvider.isDarkMode
               ? Color.fromARGB(255, 171, 172, 180)
+              : Color.fromARGB(255, 146, 192, 29),*/
+          color: darkModeProvider.isDarkMode
+              ? Color.fromARGB(255, 14, 20, 31)
               : Color.fromARGB(255, 146, 192, 29),
           borderRadius: BorderRadius.circular(20),
+          border: Border.all(color: Color.fromARGB(255, 146, 192, 29)),
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
