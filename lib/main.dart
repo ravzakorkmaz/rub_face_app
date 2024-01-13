@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
       home: StartPage(),
       routes: {
         '/startpage': (context) => StartPage(),
-        '/menupage': (context) => MenuPage(),
+        '/menupage': (context) => MenuPage(productList: []),
         '/cartpage': (context) => CartPage(
               productList: [],
             ),

@@ -3,7 +3,7 @@ import 'package:rub_face_app/components/app_bar.dart';
 import 'package:rub_face_app/components/bottom_bar.dart';
 import 'package:rub_face_app/models/cart_model.dart';
 import 'package:provider/provider.dart';
-import 'package:rub_face_app/pages/event_pages/product.dart';
+import 'package:rub_face_app/pages/product_page.dart';
 import 'package:rub_face_app/providers/dark_mode_provider.dart';
 
 class CartPage extends StatelessWidget {

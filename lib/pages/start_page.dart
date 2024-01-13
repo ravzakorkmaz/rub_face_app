@@ -1,6 +1,7 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:rub_face_app/components/start_button.dart';
+import 'package:rub_face_app/pages/menu_page.dart';
 
 class StartPage extends StatelessWidget {
   const StartPage({super.key});
@@ -99,7 +100,12 @@ class StartPage extends StatelessWidget {
                   padding: const EdgeInsets.symmetric(horizontal: 15.0),
                   child: StartButton(
                     myText: "Los geht's",
-                    event: () => Navigator.pushNamed(context, "/menupage"),
+                    event: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => MenuPage(productList: []),
+                      ),
+                    ),
                   ),
                 ),
               ],

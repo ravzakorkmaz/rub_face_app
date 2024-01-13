@@ -3,13 +3,16 @@ import 'package:flutter/material.dart';
 import 'package:rub_face_app/components/app_bar.dart';
 import 'package:rub_face_app/components/button.dart';
 import 'package:rub_face_app/components/event_tile.dart';
-import 'package:rub_face_app/pages/event_pages/product.dart';
+import 'package:rub_face_app/pages/product_page.dart';
 import 'package:provider/provider.dart';
 import 'package:rub_face_app/pages/makerspace_page.dart';
 import 'package:rub_face_app/providers/dark_mode_provider.dart';
 
 class MenuPage extends StatefulWidget {
-  const MenuPage({Key? key}) : super(key: key);
+  final List<Map<String, dynamic>> productList;
+
+  //const MenuPage({Key? key, required this.productList}) : super(key: key);
+  const MenuPage({required this.productList});
 
   @override
   State<MenuPage> createState() => _MenuPageState();

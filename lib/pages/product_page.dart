@@ -182,8 +182,7 @@ class ProductPage extends StatelessWidget {
                       ),
                       SizedBox(height: 20),
                       MyButton(
-                        myText:
-                            "Zum Einkaufswagen (${cartModel.getTotalItems()})",
+                        myText: "Zum Warenkorb",
                         event: () => Navigator.push(
                             context,
                             MaterialPageRoute(
