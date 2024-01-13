@@ -147,7 +147,6 @@ class _MenuPageState extends State<MenuPage> {
       ),
       body: Stack(
         children: [
-          // Background image with rotation
           Transform.rotate(
             angle: 180 * 3.1415927 / 180,
             child: Image.asset(

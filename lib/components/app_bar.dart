@@ -15,9 +15,6 @@ class MyAppBar extends StatefulWidget implements PreferredSizeWidget {
 }
 
 class _MyAppBarState extends State<MyAppBar> {
-  //bool _isDarkMode = false;
-
-  //late List<Map<String, dynamic>> _currentProductList;
   List<Map<String, dynamic>> _currentProductList = [];
 
   void initState() {
@@ -43,27 +40,20 @@ class _MyAppBarState extends State<MyAppBar> {
       child: AppBar(
         title: Text(widget.myTitle),
         centerTitle: true,
-        //backgroundColor: Colors.transparent,
-        //backgroundColor: Color.fromARGB(255, 146, 192, 29),
         backgroundColor: Color.fromARGB(255, 0, 53, 96),
-        //backgroundColor: _isDarkMode ? Colors.black : Color.fromARGB(255,0,53,96),
-
         elevation: 0,
         actions: [
           IconButton(
             onPressed: () {
-              //_isDarkMode = !_isDarkMode;
               Provider.of<DarkModeProvider>(context, listen: false)
                   .toggleDarkMode();
             },
-            icon: Icon(Icons.dark_mode),
+            icon: _isDarkMode ? Icon(Icons.light_mode) : Icon(Icons.dark_mode),
           ),
           Padding(
             padding: const EdgeInsets.only(right: 15.0),
             child: IconButton(
                 icon: Icon(Icons.shopping_cart),
-                /*onPressed: () => Navigator.pushNamed(context, '/cartpage',
-                    arguments: _currentProductList)),*/
                 onPressed: () => Navigator.push(
                     context,
                     MaterialPageRoute(

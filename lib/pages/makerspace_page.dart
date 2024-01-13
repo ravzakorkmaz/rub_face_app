@@ -1,9 +1,6 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:rub_face_app/components/app_bar.dart';
-import 'package:rub_face_app/models/cart_model.dart';
 import 'package:rub_face_app/providers/dark_mode_provider.dart';
 import 'package:flutter_image_slideshow/flutter_image_slideshow.dart';
 

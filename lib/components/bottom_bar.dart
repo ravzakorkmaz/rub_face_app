@@ -17,7 +17,6 @@ class BottomBar extends StatelessWidget {
       width: double.infinity,
       height: screenHeight * 0.15,
       padding: EdgeInsets.all(10),
-      //color: Color.fromARGB(255,0,53,96),
       decoration: BoxDecoration(
         color: darkModeProvider.isDarkMode
             ? Color.fromARGB(255, 0, 53, 96)
@@ -39,7 +38,7 @@ class BottomBar extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  'GESAMTSUMME', // Format the total as needed
+                  'GESAMTSUMME',
                   style: TextStyle(
                       color: darkModeProvider.isDarkMode
                           ? Colors.white
@@ -48,7 +47,7 @@ class BottomBar extends StatelessWidget {
                       fontWeight: FontWeight.bold),
                 ),
                 Text(
-                  '${total.toStringAsFixed(2)} €', // Format the total as needed
+                  '${total.toStringAsFixed(2)} €',
                   style: TextStyle(
                       color: darkModeProvider.isDarkMode
                           ? Colors.white
@@ -56,12 +55,6 @@ class BottomBar extends StatelessWidget {
                       fontSize: 18,
                       fontWeight: FontWeight.bold),
                 ),
-                /*ElevatedButton(
-              onPressed: () {
-                // Add your logic for the button press
-              },
-              child: Text('Checkout'),
-            ),*/
               ],
             ),
           ),

@@ -21,7 +21,6 @@ class EventTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final darkModeProvider = Provider.of<DarkModeProvider>(context);
-    Color textColor = darkModeProvider.isDarkMode ? Colors.white : Colors.black;
 
     return Container(
       width: MediaQuery.of(context).size.width * 0.5,
@@ -30,15 +29,9 @@ class EventTile extends StatelessWidget {
           horizontal: MediaQuery.of(context).size.width * 0.05),
       padding: EdgeInsets.all(MediaQuery.of(context).size.width * 0.03),
       decoration: BoxDecoration(
-          /*color: darkModeProvider.isDarkMode
-            ? Color.fromARGB(255, 34, 40, 53)
-            : Color.fromARGB(255, 146, 192, 29),*/
           color: darkModeProvider.isDarkMode
               ? Color.fromARGB(255, 8, 22, 35).withOpacity(0.8)
               : Color.fromARGB(255, 146, 192, 29).withOpacity(0.75),
-          /*color: darkModeProvider.isDarkMode
-              ? Color.fromARGB(255, 8, 22, 35).withOpacity(0.8)
-              : Color.fromARGB(255, 0, 53, 96).withOpacity(0.9),*/
           borderRadius: BorderRadius.circular(20),
           border: Border.all(
               color: darkModeProvider.isDarkMode
@@ -59,6 +52,7 @@ class EventTile extends StatelessWidget {
           Text(
             name,
             style: TextStyle(
+              fontWeight: FontWeight.bold,
               fontSize: 18,
               color: Colors.white,
             ),

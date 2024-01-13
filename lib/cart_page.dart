@@ -103,11 +103,11 @@ class CartPage extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(height: 15), // Abstand zwischen den Produktzeilen
+          SizedBox(height: 15),
         ],
       );
     } else {
-      return SizedBox.shrink(); // Return an empty widget if quantity is 0
+      return SizedBox.shrink();
     }
   }
 

@@ -1,6 +1,5 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
-import 'package:rub_face_app/components/button.dart';
 import 'package:rub_face_app/components/start_button.dart';
 
 class StartPage extends StatelessWidget {
@@ -18,29 +17,16 @@ class StartPage extends StatelessWidget {
           fit: StackFit.expand,
           children: [
             Image.asset(
-              //"lib/images/makerspace_3d.png",
               "lib/images/tabs2.png",
               fit: BoxFit.cover,
             ),
             Transform.rotate(
-              angle: -15 *
-                  3.1415927 /
-                  180, // Hier können Sie den Rotationswinkel in Grad festlegen
+              angle: -15 * 3.1415927 / 180,
               child: Image.asset(
                 "lib/images/header2.png",
                 fit: BoxFit.cover,
               ),
             ),
-            /*Image.asset(
-              //"lib/images/makerspace_3d.png",
-              "lib/images/header2.png",
-              fit: BoxFit.cover,
-            ),*/
-            /*Image.asset(
-              //"lib/images/makerspace_3d.png",
-              "lib/images/header2_reverse.png",
-              //fit: BoxFit.cover,
-            ),*/
             Container(
               color: Colors.black.withOpacity(0.6),
               child: BackdropFilter(
@@ -58,8 +44,6 @@ class StartPage extends StatelessWidget {
                   padding: EdgeInsets.only(top: screenHeight * 0.05),
                   child: Image.asset(
                     "lib/images/makerspace-weiss.png",
-                    //fit: BoxFit.fitWidth,
-                    //height: screenHeight * 0.15,
                     width: screenWidth * 0.95,
                   ),
                 ),
@@ -80,8 +64,7 @@ class StartPage extends StatelessWidget {
                     ],
                   ),
                   child: ClipRRect(
-                    borderRadius: BorderRadius.circular(
-                        20.0), // Wiederholen Sie die gleiche Zahl wie oben
+                    borderRadius: BorderRadius.circular(20.0),
                     child: Image.asset(
                       "lib/images/SOM.jpg",
                       height: screenHeight * 0.3,
@@ -95,61 +78,10 @@ class StartPage extends StatelessWidget {
             Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                //SizedBox(height: 15),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    /*Text(
-                      "MAKERSPACE",
-                      style: TextStyle(
-                        fontSize: 38,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white,
-                      ),
-                    ),*/
-
-                    //SizedBox(width: 10),
-                  ],
+                  children: [],
                 ),
-                //SizedBox(height: 50),
-                /*Image.asset(
-                    //"lib/images/makerspace_3d.png",
-                    "lib/images/makerspace/header2.png",
-                    fit: BoxFit.cover),*/
-                //SizedBox(height: 500),
-                //SizedBox(height: 25),
-                /* Padding(
-                  padding: EdgeInsets.only(top: screenHeight * 0.2),
-                  child: Text(
-                    "Erleben Sie kreative Produkte!",
-                    style: TextStyle(
-                        fontSize: 30,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white),
-                  ),
-                ),
-                SizedBox(height: 15),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                  child: Text(
-                    "クリエイティブな製品を体験してください",
-                    style: TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white),
-                  ),
-                ),
-                SizedBox(height: 50),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                  child: Text(
-                    "Entdecke die Welt der Entfaltung und tauche ein in das Meer voller Ideen.",
-                    style: TextStyle(
-                        fontSize: 10,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white),
-                  ),
-                ),*/
                 SizedBox(height: screenHeight * 0.7),
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: 15.0),
@@ -166,11 +98,8 @@ class StartPage extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 15.0),
                   child: StartButton(
-                    myText: "Shoppe los",
+                    myText: "Los geht's",
                     event: () => Navigator.pushNamed(context, "/menupage"),
-                    /*MyButton(
-                    myText: "Shoppe los",
-                    event: () => Navigator.pushNamed(context, "/menupage"),*/
                   ),
                 ),
               ],

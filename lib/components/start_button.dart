@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-import 'package:rub_face_app/providers/dark_mode_provider.dart';
 
 class StartButton extends StatelessWidget {
   final String myText;
@@ -14,17 +12,11 @@ class StartButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final darkModeProvider = Provider.of<DarkModeProvider>(context);
-    Color textColor = darkModeProvider.isDarkMode ? Colors.white : Colors.black;
-
     return GestureDetector(
       onTap: event,
       child: Container(
         padding: EdgeInsets.all(16),
         decoration: BoxDecoration(
-          /*color: darkModeProvider.isDarkMode
-              ? Color.fromARGB(255, 171, 172, 180)
-              : Color.fromARGB(255, 146, 192, 29),*/
           color: Colors.white,
           borderRadius: BorderRadius.circular(20),
         ),

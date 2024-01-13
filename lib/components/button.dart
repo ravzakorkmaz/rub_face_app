@@ -15,16 +15,12 @@ class MyButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final darkModeProvider = Provider.of<DarkModeProvider>(context);
-    Color textColor = darkModeProvider.isDarkMode ? Colors.white : Colors.black;
 
     return GestureDetector(
       onTap: event,
       child: Container(
         padding: EdgeInsets.all(16),
         decoration: BoxDecoration(
-          /*color: darkModeProvider.isDarkMode
-              ? Color.fromARGB(255, 171, 172, 180)
-              : Color.fromARGB(255, 146, 192, 29),*/
           color: darkModeProvider.isDarkMode
               ? Color.fromARGB(255, 14, 20, 31)
               : Color.fromARGB(255, 146, 192, 29),
